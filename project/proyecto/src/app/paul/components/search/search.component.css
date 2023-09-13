@@ -1,0 +1,42 @@
+/*You can add global styles to this file, and also import other style files */
+
+/*html, body { height: 100%; }
+body { margin:50px; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-form-field{
+    width: 200px
+}*/
+.container {
+    display: flex;
+    justify-content: center; /* Centrar 
+    horizontalmente */
+    align-items: flex-start; /* Mantener en su posición vertical original */
+    overflow: hidden;
+    margin-left: 35%;
+    width: 300px;
+  }
+  
+  @media (max-width: 767px) {
+  .milista {
+    height: 290px;
+    width: 360px;
+    overflow-y:auto;
+    margin-left: 24%;;
+  }
+  }
+  
+  .bar {
+    /* Estilos específicos para el formulario */
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px;
+}

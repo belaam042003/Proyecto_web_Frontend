@@ -1,0 +1,112 @@
+/*
+    * LAYOUT RECURSOS
+    */
+.formRecursos {
+    float: left;
+    width: 1170px;
+    height: 90px;
+    background: #a5cff8;
+    padding: 10px;
+    margin-top: 30px;
+    margin-right: 10px;
+    margin-bottom: 50px;
+    margin-left: 300px;
+    min-height: 185vh;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+}
+
+.formRecursos .container.gallery-container {
+    width: 1038px;
+    height: 50px;
+    flex-shrink: 0;
+    background: #4c97c1;
+    background-color: #fff;
+    color: #35373a;
+    min-height: 172vh;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+    margin-top: 20px;
+    margin-left: 20px;
+
+}
+
+.formRecursos .tz-gallery {
+    padding: 40px;
+}
+
+.formRecursos .tz-gallery .lightbox img {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.tz-gallery img {
+    width: 33.33%;
+    /* Cada imagen ocupa 33.33% del ancho total */
+    object-fit: cover;
+    float: left;
+}
+
+.formRecursos .tz-gallery .lightbox img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.formRecursos .baguetteBox-button {
+    background-color: transparent !important;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .formRecursos .container.gallery-container {
+        border-radius: 0;
+        float: left;
+    }
+}
+
+/*
+    BOTONES
+    */
+
+    .BordeBotones {
+        display: flex;
+        /* Utilizamos flexbox para alinear elementos internos */
+        align-items: center;
+        width: auto;
+        height: 35px;
+        border-radius: 20px;
+        background: rgba(80, 146, 185, 0.27);
+        margin-top: 1px;
+        padding-left: 50px;
+        /* Agregamos un pequeño espacio a la izquierda para separar los botones del borde */
+    }
+    
+    .BotonConImagen1 {
+        display: flex;
+        flex-direction: column;
+        /* Coloca la imagen debajo del botón */
+        background: transparent;
+        border: none;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-left: 15px;
+        
+        /* Centra el texto en el botón */
+    }
+    
+    .BotonConImagen1 img {
+        width: 20px;
+        /* Ajusta el tamaño de la imagen */
+        height: 20px;
+        box-shadow: none;
+        background: transparent;
+    }
+    

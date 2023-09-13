@@ -1,0 +1,37 @@
+<mat-toolbar color="primary" style="background-color: #4C97C1;">
+  ConnectEDU
+  <ng-container *ngIf="user$ | async as user; else loginButton">
+    <button mat-button [matMenuTriggerFor]="userMenu" class="user-button">
+      <img
+        width="40"
+        height="40"
+        class="profile-image-toolbar"
+        [src]="user.photoURL ?? 'assets/images/image-placeholder.png'"
+        alt="Perfil del usuario"
+      />
+      {{ user.displayName }}
+      <mat-icon>expand_more</mat-icon>
+    </button>
+  </ng-container>
+  <ng-template #loginButton>
+    <button mat-button routerLink="login" class="login-button">
+      <mat-icon>login</mat-icon>
+      Ingresa
+    </button>
+  </ng-template>
+</mat-toolbar>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+<mat-menu #userMenu="matMenu">
+  <button mat-menu-item routerLink="/profile">
+    <mat-icon>account_circle</mat-icon>
+    Tu perfil
+  </button>
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    Cerrar Sesion
+  </button>
+</mat-menu>

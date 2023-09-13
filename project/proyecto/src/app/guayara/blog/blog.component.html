@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Blog</h1>
+
+    <!-- Formulario para compartir contenido -->
+    <div class="share-form">
+        <textarea [(ngModel)]="newPost" placeholder="Escribe tu publicación"></textarea>
+        <button (click)="sharePost()">Compartir</button>
+    </div>
+
+    <!-- Feed de publicaciones -->
+    <div class="feed">
+        <div class="post" *ngFor="let post of posts">
+            <p>{{ post }}</p>
+        </div>
+    </div>
+</div>
