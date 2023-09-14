@@ -41,7 +41,6 @@ import {} from '@angular/material/form-field';
 import {} from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DateDisplayPipe } from './pipes/date-display.pipe';
-import { TimeAgoPipe } from 'time-ago-pipe';
 import { DatePipe } from '@angular/common';
 import { MatDividerModule } from '@angular/material/divider';
 import { ListResourcesComponent } from './laura/components/list-resources/list-resources.component';
@@ -72,6 +71,7 @@ import { AddEditResourceComponent } from './laura/components/add-edit-resource/a
     DateDisplayPipe,
     ListResourcesComponent,
     AddEditResourceComponent,
+    HttpClientModule,
   ],
   imports: [
     BrowserModule,
