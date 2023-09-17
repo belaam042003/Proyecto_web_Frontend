@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.form-container {
+    display: block;
+    width: 300px; /* Ancho fijo */
+    margin: auto;
+    background: #eceff1;
+    padding: 20px; /* Disminuimos el padding para no hacerlo tan grande */
+    border-radius: 16px;
+    height: auto; /* Configuramos la altura a "auto" para que se ajuste al contenido */
+    overflow: auto; /* Agregamos un desbordamiento automático si el contenido es más grande que el contenedor */
+}
+
+
+.form-container mat-form-field {
+    width: 100%;
+}  
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.margin-top {
+    margin-top: 16px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+html{
+    background-image: url('../src/assets/images/La-Sergio-4.0-transformación-digital-cuarta-revolución-industrial-mundo-4.0.jpg');
+    background-size: cover; // Ajusta el tamaño de la imagen para cubrir todo el fondo
+    background-repeat: no-repeat;
+}

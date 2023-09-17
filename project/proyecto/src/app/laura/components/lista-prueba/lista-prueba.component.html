@@ -1,0 +1,24 @@
+<table class="mi-tabla">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>url</th>
+            <th>descripción</th>
+            <th>etiquetas</th>
+            <th>visualización</th>
+            <th>editar</th>
+            <th>eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let recurso of recursos">
+            <td>{{ recurso.id }}</td>
+            <td>{{ recurso.urlImagen }}</td>
+            <td>{{ recurso.descripcion }}</td>
+            <td>{{ recurso.etiquetas }}</td>
+            <td>{{ recurso.visibilidad }}</td>
+            <td><button class="BotonConImagen1" type="submit" ><img src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" ></button></td>
+            <td><button class="BotonConImagen2" type="submit" (click)="eliminarRecurso(recurso.id)"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" ></button></td>  
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,97 @@
+/* Estilos de la barra de navegación horizontal */
+.navbar {
+  background-color: #2a3f54;
+  /* Cambio de color de fondo */
+  color: #fff;
+  /* Texto en color blanco */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px;
+  padding-right: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar li {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.navbar img {
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+  height: 24px;
+  /* Aumentamos el tamaño de los íconos */
+  width: 24px;
+  /* Aumentamos el tamaño de los íconos */
+  margin-right: 10px;
+}
+
+.pagIni {
+  margin-right: 1090px;
+  /* Centramos el título en la barra */
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  flex-grow: 1;
+  /* Hacemos que el título ocupe el espacio restante */
+}
+
+
+/* Estilos para el menú desplegable */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2a3f54;
+  /* Cambio de color de fondo */
+  min-width: 160px;
+  z-index: 1;
+  border-top: 1px solid #3c526b;
+  /* Agregamos un borde superior */
+  top: 100%;
+  /* Ajustamos la posición para que aparezca debajo del elemento padre */
+  left: 0;
+  /* Alineamos el menú a la izquierda */
+}
+
+.dropdown-content a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+  /* Agregamos transición al cambiar el color de fondo al pasar el cursor */
+}
+
+.dropdown-content a:hover {
+  background-color: #1e2c3d;
+  /* Cambio de color al pasar el cursor */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

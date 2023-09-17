@@ -1,0 +1,81 @@
+/* Estilos para el carrusel */
+.formCarrusel {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: 285px;
+  margin-right: auto;
+
+}
+
+.layoutCarrusel .carousel-container {
+  position: relative;
+  width: 1200px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.layoutCarrusel .carousel {
+  display: flex;
+  margin-top: 30px;
+  width: 300% ;/* Un 300% para contener todas las imágenes */
+  animation: carousel 5s infinite; /* Ajusta la duración de la animación */
+  transform: translateX(10%);
+}
+
+.carousel img {
+  width: 1500px;
+  height: 450px;
+}
+
+@keyframes carousel {
+    0% {
+      transform: translateX(0);
+    }
+    90% {
+      transform: translateX(0);
+    }
+    95% {
+      transform: translateX(10%); /* Desplaza hacia la izquierda para mostrar la siguiente imagen */
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+
+/* Estilos para las flechas de navegación */
+.prev-button,
+.next-button {
+  margin-top: 20px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+
+.prev-button img,
+.next-button img{
+  width: 40px;
+  height: 40px;
+}
+
+.prev-button {
+  left: 0;
+}
+
+.next-button {
+  right: 0;
+}
+
+/* Cambio de color al pasar el cursor sobre las flechas */
+.prev-button:hover,.next-button:hover {
+  background-color: #555;
+}

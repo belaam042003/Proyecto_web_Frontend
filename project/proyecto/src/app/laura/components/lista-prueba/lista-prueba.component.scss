@@ -1,0 +1,64 @@
+/* Estilos para la tabla */
+.mi-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.mi-tabla th, .mi-tabla td {
+    padding: 8px;
+    text-align: left;
+}
+
+.mi-tabla th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.mi-tabla tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilo para los bordes de la tabla */
+.mi-tabla th, .mi-tabla td {
+    border: 1px solid #ddd;
+}
+
+/* Estilos para cuando se pasa el mouse sobre una fila */
+.mi-tabla tr:hover {
+    background-color: #ddd;
+}
+.BordeBotones {
+    display: flex;
+    /* Utilizamos flexbox para alinear elementos internos */
+    align-items: center;
+    width: auto;
+    height: 35px;
+    border-radius: 20px;
+    background: rgba(80, 146, 185, 0.27);
+    margin-top: 1px;
+    padding-left: 50px;
+    /* Agregamos un pequeño espacio a la izquierda para separar los botones del borde */
+}
+
+.BotonConImagen1 {
+    display: flex;
+    flex-direction: column;
+    /* Coloca la imagen debajo del botón */
+    background: transparent;
+    border: none;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    
+    /* Centra el texto en el botón */
+}
+
+.BotonConImagen1 img {
+    width: 20px;
+    /* Ajusta el tamaño de la imagen */
+    height: 20px;
+    box-shadow: none;
+    background: transparent;
+}

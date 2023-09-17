@@ -1,0 +1,40 @@
+<div class="form-container mat-elevation-z5">
+    <h1>Estamos felices por tenerte en nuestra plataforma a un solo paso!</h1>
+    <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+        <mat-form-field>
+            <input matInput placeholder="Nombre" formControlName="name" />
+            <mat-error *ngIf="name?.errors?.['required']">
+                El nombre es requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Correo electronico" formControlName="email" />
+            <mat-error *ngIf="email?.errors?.['required']">
+                El correo electronico es requerido
+            </mat-error>
+            <mat-error *ngIf="email?.errors?.['email']">
+                Ingrese un formato correcto de correo electronico
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Contraseña" formControlName="password" type="password" />
+            <mat-error *ngIf="password?.errors?.['required']">
+                La contraseña es requerida
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Contraseña correcta" formControlName="confirmPassword" type="password" />
+            <mat-error *ngIf="confirmPassword?.errors?.['required']">
+                Confirme contraseña
+            </mat-error>
+        </mat-form-field>
+        <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+            Las contraseñas deben de coincidir
+        </mat-error>
+        <div class="center margin-top">
+            <button mat-raised-button color="primary" type="submit">
+                Registrate!
+            </button>
+        </div>
+    </form>
+</div>

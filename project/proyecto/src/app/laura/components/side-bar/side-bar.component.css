@@ -1,0 +1,53 @@
+/* Estilos de la barra lateral vertical */
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    background-color: #2a3f54; /* Cambio de color de fondo */
+    color: #fff; /* Texto en color blanco */
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    transition: width 0.3s ease; /* Agregamos transición suave al cambiar el ancho */
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px; /* Reducimos el espacio superior */
+  }
+  
+  .sidebar li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Agregamos transición al cambiar el color de fondo al pasar el cursor */
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    margin-left: 10px;
+  }
+  
+  .sidebar img {
+    background-color: transparent;
+    border: none;
+    background-repeat: no-repeat;
+    height: 24px; /* Aumentamos el tamaño de los íconos */
+    width: 24px; /* Aumentamos el tamaño de los íconos */
+    margin-right: 10px;
+  }
+  
+  /* Estilos del contenido principal */
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Agregamos transición al abrir y cerrar la barra lateral */
+  }
+  
+  /* Cambio de color al pasar el cursor por los elementos de la barra lateral */
+  .sidebar li:hover {
+    background-color: #1e2c3d;
+  }
