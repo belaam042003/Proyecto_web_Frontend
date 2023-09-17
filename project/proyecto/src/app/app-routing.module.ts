@@ -16,7 +16,6 @@ import { InicialComponent } from './nicolas/perfil/inicial/inicial.component';
 import { InicioBusquedaComponent } from './paul/inicio-busqueda/inicio-busqueda.component';
 import { inicialResenasComponent } from './julieth/resenas/inicialResenas/inicialResenas.component';
 import { BlogComponent } from './guayara/blog/blog.component';
-import { HomeGComponent } from './guayara/homeG/homeG.component';
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectToHome = () => redirectLoggedInTo(['home']);
@@ -28,7 +27,6 @@ const routes: Routes = [
   { path: 'perfil', component: InicialComponent,},
   { path: 'busqueda', component: InicioBusquedaComponent,},
   { path: 'resenas', component: inicialResenasComponent,},
-  { path: 'homeG', component: HomeGComponent},
   { path: 'blog', component: BlogComponent},
   { path: 'login',component: LoginComponent,...canActivate(redirectToHome),},
   { path: 'sign-up',component: SignUpComponent,...canActivate(redirectToHome),},

@@ -1,16 +1,14 @@
-<div class="container">
-    <h1>Blog</h1>
+<section id = "principal">
+    <section id = "publicaciones">
+        <article class="post">
 
-    <!-- Formulario para compartir contenido -->
-    <div class="share-form">
-        <textarea [(ngModel)]="newPost" placeholder="Escribe tu publicación"></textarea>
-        <button (click)="sharePost()">Compartir</button>
-    </div>
-
-    <!-- Feed de publicaciones -->
-    <div class="feed">
-        <div class="post" *ngFor="let post of posts">
-            <p>{{ post }}</p>
-        </div>
-    </div>
-</div>
+            <a href="" class="enlace-post">
+                <h2 class="titulo-post">Titulo de la noticia</h2>
+            </a>
+            <!-- <img scr="" class="img-post">  -->
+            <p class="parrafo post">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt sapiente totam voluptatibus laboriosam unde eveniet consequuntur labore neque dolorem sequi. Harum earum omnis odio esse eaque excepturi, id voluptas quae.
+            </p>
+        </article>
+    </section>
+</section>

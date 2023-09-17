@@ -19,7 +19,6 @@ import { SearchPipe } from './paul/pipes/search.pipe';
 import { InicioBusquedaComponent } from './paul/inicio-busqueda/inicio-busqueda.component';
 import { inicialResenasComponent } from './julieth/resenas/inicialResenas/inicialResenas.component';
 import { BlogComponent } from './guayara/blog/blog.component';
-import { HomeGComponent } from './guayara/homeG/homeG.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -63,7 +62,6 @@ import { AddEditResourceComponent } from './laura/components/add-edit-resource/a
     InicioBusquedaComponent,
     inicialResenasComponent,
     BlogComponent,
-    HomeGComponent,
     LoginComponent,
     HomeComponent,
     LandingComponent,
