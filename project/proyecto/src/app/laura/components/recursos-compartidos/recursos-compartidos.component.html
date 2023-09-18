@@ -1,0 +1,22 @@
+<body>
+    <app-side-bar></app-side-bar>
+    <app-nav-bar></app-nav-bar>
+    <app-carousel></app-carousel>
+    
+    <div class="container2">
+        <h2 class="txtRec">Recursos compartidos por la comunidad educativa</h2>
+    </div>
+
+    <app-form-recursos></app-form-recursos>
+
+        <div class="container1">
+            <h1>¿Quieres compartir documentos útiles a la comunidad educativa?</h1>
+            <p>Si es así, da click en el siguiente botón:</p>
+            <a class="boton-cargar" (click)="direccionarPag('/subirDocs')">Cargar Documentos</a>
+        </div>
+
+        <button class="boton-plus" (click)="direccionarPag('/subirDocs')">
+            <img src = "https://cdn-icons-png.flaticon.com/128/3524/3524388.png">
+        </button>
+    
+</body>

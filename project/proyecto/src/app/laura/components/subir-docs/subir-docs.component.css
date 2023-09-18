@@ -1,0 +1,95 @@
+/* Estilo del formulario */
+.container {
+  margin-left: 550px; /* Centro el formulario horizontalmente y ajusto el margen superior */
+  margin-top: 100px;
+  margin-bottom: 50px;
+  max-width: 600px; /* Limito el ancho del formulario para una mejor legibilidad */
+  padding: 20px;
+  background-color: #f6fbfb; /* Un fondo más claro para el formulario */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sutil sombra */
+  text-align: center;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+  background-color: #007BFF; /* Cambio el color de fondo del encabezado */
+  color: #fff; /* Texto en color blanco */
+  padding: 20px;
+  border-top-left-radius: 10px; /* Borde redondeado en la esquina superior izquierda */
+  border-top-right-radius: 10px; /* Borde redondeado en la esquina superior derecha */
+
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold; /* Hago que las etiquetas sean más visibles */
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="file"],
+.form-group input[type="url"],
+.form-group select,
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px; /* Aumento el espacio alrededor del texto */
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Borde redondeado */
+  font-size: 16px;
+  outline: none; /* Elimino el borde de enfoque en los campos de entrada */
+}
+
+.form-group button {
+  margin-top: 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 12px 24px; /* Aumento el espacio alrededor del botón */
+  border-radius: 5px; /* Borde redondeado */
+  cursor: pointer;
+  font-size: 18px; /* Un poco más grande */
+  transition: background-color 0.3s; /* Agrego una transición suave al cambiar el color de fondo */
+}
+
+.form-group button:hover {
+  background-color: #0056b3; /* Cambio el color de fondo en el hover */
+}
+
+textarea {
+  height: 150px; /* Aumento la altura del área de texto */
+}
+
+.opciones-avanzadas {
+  display: flex;
+  margin-right: 70px;
+  justify-content: space-between;
+  align-items: center; /* Alineo verticalmente el contenido de las opciones avanzadas */
+}
+
+.opciones-avanzadas label,
+.opciones-avanzadas select,
+.opciones-avanzadas input[type="text"] {
+  flex: 1;
+  margin-right: 10px;
+  
+}
+
+#tipoContenido {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Añado transiciones para mejorar la experiencia del usuario */
+}
+
+#tipoContenido:focus {
+  border-color: #007BFF; /* Cambio el color del borde en el enfoque */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Añado una sombra en el enfoque */
+}
