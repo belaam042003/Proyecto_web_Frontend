@@ -1,6 +1,6 @@
 .sign-up-link {
-    font-size: 1.2rem;
-    margin-left: 18px;
+    font-size: 1.8rem;
+    margin-left: 8px;
     text-decoration: none;
     color: #007bff;
     transition: color 0.3s ease-in-out;
@@ -10,9 +10,13 @@
 }
 
 .sign-up-link:hover {
-    color: #0056b3;
-    background-color: #c0e0ff;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.8rem;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
 /* Opcional: Cambio de cursor al pasar por encima */
@@ -20,27 +24,56 @@
     cursor: pointer;
 }
 
-/* Estilo para el botón de inicio de sesión y de registro */
-.login-button-custom,
-.smaller-button {
+/* Estilo para el botón de Iniciar sesión */
+.login-button-custom {
     background-color: #007bff;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    width: 100%;
+    padding: 3px 20px;
+    text-align: center;
 }
 
-.login-button-custom:hover,
-.smaller-button:hover {
+/* Estilo cuando el mouse está sobre el botón de Iniciar sesión */
+.login-button-custom:hover {
+    background-color: #0056b3; /* Cambia el color de fondo */
+    text-decoration: underline; /* Agrega un subrayado */
+}
+
+/* Estilo para el botón de Registrarse */
+.signup-button-custom {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.signup-button-custom:hover {
     background-color: #0056b3;
 }
 
-/* Clase para hacer el botón un poco más pequeño */
-.smaller-button {
-    font-size: 1rem;
-    padding: 8px 16px;
+/* Estilo para centrar en el lado izquierdo y mantener un ancho fijo en .form-container */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente */
+    align-items: flex-start; /* Alinear a la izquierda horizontalmente */
+    height: 50.5vh; /* Toma la altura de la ventana */
+    width: 400px; /* Ancho fijo en píxeles */
 }
 
-
+.full-width-button:hover {
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+}
