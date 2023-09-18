@@ -93,3 +93,103 @@ textarea {
   border-color: #007BFF; /* Cambio el color del borde en el enfoque */
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Añado una sombra en el enfoque */
 }
+
+/* Estilos para la tabla */
+.mi-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.mi-tabla th, .mi-tabla td {
+  padding: 8px;
+  text-align: left;
+}
+
+.mi-tabla th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.mi-tabla tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Estilo para los bordes de la tabla */
+.mi-tabla th, .mi-tabla td {
+  border: 1px solid #ddd;
+}
+
+/* Estilos para cuando se pasa el mouse sobre una fila */
+.mi-tabla tr:hover {
+  background-color: #ddd;
+}
+.BordeBotones {
+  display: flex;
+  /* Utilizamos flexbox para alinear elementos internos */
+  align-items: center;
+  width: auto;
+  height: 35px;
+  border-radius: 20px;
+  background: rgba(80, 146, 185, 0.27);
+  margin-top: 1px;
+  padding-left: 50px;
+  /* Agregamos un pequeño espacio a la izquierda para separar los botones del borde */
+}
+
+.BotonConImagen1 {
+  display: flex;
+  flex-direction: column;
+  /* Coloca la imagen debajo del botón */
+  background: transparent;
+  border: none;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  
+  /* Centra el texto en el botón */
+}
+
+.BotonConImagen1 img {
+  width: 20px;
+  /* Ajusta el tamaño de la imagen */
+  height: 20px;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Estilo para el fondo oscuro detrás del cuadro de diálogo */
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Asegura que esté encima de otros elementos */
+}
+
+/* Estilo para el cuadro de diálogo */
+.modal-dialog {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  max-width: 80%; /* Ancho máximo del cuadro de diálogo */
+  position: relative;
+}
+
+/* Estilo para el botón de cierre */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+

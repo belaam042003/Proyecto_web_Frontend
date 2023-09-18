@@ -32,7 +32,8 @@ export class ResourceService {
   
       //  Eliminar recurso:
       eliminarRecurso(id: number){
-         return this.http.post<Boolean>(this.rutaGloblal + id , {
+        console.log(this.rutaGloblal +id)
+         return this.http.post<Boolean>(this.rutaGloblal +id , {
           observe: 'response'
         })
       }

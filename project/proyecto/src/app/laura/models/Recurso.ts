@@ -1,4 +1,4 @@
-export class Recurso{
+export class Recurso {
     id!: number;
     urlImagen?: String;
     descripcion?: String;
