@@ -21,11 +21,13 @@
   width: 300% ;/* Un 300% para contener todas las imágenes */
   animation: carousel 5s infinite; /* Ajusta la duración de la animación */
   transform: translateX(10%);
+  height: auto;
+  margin: auto; 
 }
 
 .carousel img {
-  width: 1500px;
-  height: 450px;
+  width: 1600px;
+  height: 600px;
 }
 
 @keyframes carousel {
