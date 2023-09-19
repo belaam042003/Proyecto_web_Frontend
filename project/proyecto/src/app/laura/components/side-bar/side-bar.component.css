@@ -2,7 +2,7 @@
 .sidebar {
     height: 100vh;
     width: 250px;
-    background-color: #2a3f54; /* Cambio de color de fondo */
+    background-color:#4C97C1; /* Cambio de color de fondo */
     color: #fff; /* Texto en color blanco */
     position: fixed;
     top: 0;
@@ -14,7 +14,7 @@
   .sidebar ul {
     list-style-type: none;
     padding: 0;
-    margin-top: 20px; /* Reducimos el espacio superior */
+    margin-top: 40px; /* Reducimos el espacio superior */
   }
   
   .sidebar li {
@@ -51,3 +51,14 @@
   .sidebar li:hover {
     background-color: #1e2c3d;
   }
+  .sidebar-escondido {
+    width: 60px; /* Ancho mínimo del sidebar cuando está contraído */
+  }
+/* Estilos para el contenido principal sin el sidebar (contraído) */
+.content-expandido {
+  margin-left: 250px; /* Ancho del sidebar expandido */
+}
+
+.content-con-sidebar {
+  margin-left: 60px; /* Ancho del sidebar contraído */
+}  

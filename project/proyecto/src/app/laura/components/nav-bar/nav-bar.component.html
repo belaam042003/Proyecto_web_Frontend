@@ -17,15 +17,34 @@
                 <a href="#">Correo</a>
             </div>
         </li>
-        <li class="dropdown">
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/456/456212.png">Laura García</a>
-            <div class="dropdown-content">
-                <a href="#">Perfil</a>
-                <a href="#">Bandeja de entrada</a>
-                <a href="#">Ajustes</a>
-                <a href="#">Cerrar sesión</a>
-            </div>
-        </li>
-        
+        <ng-container *ngIf="user$ | async as user; else loginButton">
+            <button mat-button [matMenuTriggerFor]="userMenu" class="user-button">
+              <img
+                width="40"
+                height="40"
+                class="profile-image-toolbar"
+                [src]="user.photoURL ?? 'assets/images/image-placeholder.png'"
+                alt="Perfil del usuario"
+              />
+              {{ user.displayName }}
+              <mat-icon>expand_more</mat-icon>
+            </button>
+          </ng-container>
+          <ng-template #loginButton>
+            <button mat-button routerLink="login" class="login-button">
+              <mat-icon>login</mat-icon>
+              Ingresa
+            </button>
+          </ng-template>
+          <mat-menu #userMenu="matMenu">
+            <button mat-menu-item routerLink="/profile">
+              <mat-icon>account_circle</mat-icon>
+              Tu perfil
+            </button>
+            <button mat-menu-item (click)="logout()">
+              <mat-icon>logout</mat-icon>
+              Cerrar Sesion
+            </button>
+          </mat-menu>
     </ul>
 </nav>

@@ -1,13 +1,13 @@
 /* Estilos de la barra de navegación horizontal */
 .navbar {
-  background-color: #2a3f54;
+  background-color:#4C97C1;
   /* Cambio de color de fondo */
   color: #fff;
   /* Texto en color blanco */
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 50px;
+  height: 60px;
   padding-right: 20px;
   position: fixed;
   top: 0;

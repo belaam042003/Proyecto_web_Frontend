@@ -28,7 +28,11 @@ export class ListaPruebaComponent {
   }
 
 
-  
+  descargarArchivo() {
+    // Reemplaza 'ruta_del_archivo' con la URL de tu archivo a descargar
+    const rutaArchivo = 'ruta_del_archivo';
+    window.open(rutaArchivo, '_blank');
+  }
   //get recursos
   getRecursos(){
     this.rService.getRecursos().subscribe(res =>{
