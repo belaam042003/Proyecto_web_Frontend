@@ -191,5 +191,116 @@ textarea {
   cursor: pointer;
   font-size: 20px;
 }
+/* Estilo para el fondo oscuro detrás del cuadro de diálogo */
+modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Asegura que esté encima de otros elementos */
+}
+
+/* Estilo para el cuadro de diálogo */
+.modal-content2 {
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  padding: 20px;
+  width: 400px; /* Ancho del cuadro de diálogo */
+  max-width: 80%; /* Ancho máximo */
+  position: relative;
+}
+
+/* Estilo para el botón de cierre */
+.modal-content2 .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333; /* Color de texto para el botón de cierre */
+}
+
+/* Estilo para el título del cuadro de diálogo */
+.modal-content2 h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333; /* Color de texto del título */
+}
+
+/* Estilo para las etiquetas de formulario */
+.modal-content2 label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555; /* Color de texto para las etiquetas */
+}
+
+/* Estilo para los campos de entrada de formulario */
+.modal-content2 input[type="file"],
+.modal-content2 input[type="url"],
+.modal-content2 select,
+.modal-content2 input[type="text"],
+.modal-content2 textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+/* Estilo para el botón de enviar */
+.modal-content2 button[type="submit"] {
+  background-color: #007BFF; /* Color de fondo del botón */
+  color: #fff; /* Color de texto del botón */
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Estilo para el botón de enviar al pasar el mouse */
+.modal-content2 button[type="submit"]:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilo para las opciones avanzadas */
+.modal-content2 .opciones-avanzadas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Estilo para el fondo de los campos de selección */
+.modal-content2 select {
+  background-color: #f2f2f2; /* Color de fondo de los campos de selección */
+}
+
+/* Estilo para las filas pares en la tabla dentro del cuadro de diálogo */
+.modal-content2 tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fondo de las filas pares */
+}
+
+/* Estilo para los bordes de la tabla dentro del cuadro de diálogo */
+.modal-content2 th,
+.modal-content2 td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* Estilo para las filas al pasar el mouse en la tabla dentro del cuadro de diálogo */
+.modal-content2 tr:hover {
+  background-color: #ddd; /* Color de fondo al pasar el mouse */
+}
 
 

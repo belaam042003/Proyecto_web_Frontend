@@ -11,14 +11,79 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngif="let recurso of recursos">
+        <tr *ngFor="let recurso of recursos">
             <td>{{ recurso.id }}</td>
             <td>{{ recurso.urlImagen }}</td>
             <td>{{ recurso.descripcion }}</td>
             <td>{{ recurso.etiquetas }}</td>
             <td>{{ recurso.visibilidad }}</td>
-            <td><button class="BotonConImagen1" type="submit" ><img src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" ></button></td>
-            <td><button class="BotonConImagen2" type="submit"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" ></button></td>  
+            <td><button class="BotonConImagen1" type="submit" (click)="activador(recurso)"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" ></button></td>
+            <td><button class="BotonConImagen2" type="submit" (click)="eliminarRecurso(recurso.id)"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" ></button></td>  
         </tr>
     </tbody>
-</table>
+  </table>
+  <dialog [open]="display">
+    <p>Greetings, one and all!</p>
+      <div class="modal-content2">
+        <h2>Modificador</h2>
+        <form action="" [formGroup]="formularioRecurso" method="post" enctype="multipart/form-data">
+          <!-- Selector de tipo de contenido -->
+          <div class="form-group2">
+            <label for="tipoContenido">Selecciona el tipo de contenido:</label>
+            <select id="tipoContenido" name="tipoContenido" [(ngModel)]="selectedContentType" (change)="onContentTypeChange()">
+              <option value="documento">Subir Documento (PDF, DOC, DOCX)</option>
+              <option value="enlace">Enlace</option>
+              <option value="video">Subir Video (MP4, AVI)</option>
+            </select>
+          </div>
+      
+          <!-- Subir Documento -->
+          <div class="form-group2" id="grupoDocumento" *ngIf="selectedContentType === 'documento'">
+            <label for="fileDocumento">Subir Documento (PDF, DOC, DOCX):</label>
+            <input type="file" id="fileDocumento" name="fileDocumento" accept=".pdf, .doc, .docx">
+          </div>
+      
+          <!-- Subir Enlace -->
+          <div class="form-group2" id="grupoEnlace" *ngIf="selectedContentType === 'enlace'">
+            <label for="enlace">Enlace:</label>
+            <input type="url" id="enlace" name="enlace" placeholder="https://ejemplo.com">
+          </div>
+      
+          <!-- Subir Video -->
+          <div class="form-group2" id="grupoVideo" *ngIf="selectedContentType === 'video'">
+            <label for="video">Subir Video (MP4, AVI, etc.):</label>
+            <input type="file" id="video" name="video" accept=".mp4, .avi">
+          </div>
+      
+          <!-- Descripción -->
+          <div class="form-group2">
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" rows="4" formControlName = "descripcion"></textarea>
+          </div>
+      
+          <!-- Opciones avanzadas -->
+          <div class="opciones-avanzadas">
+            <label for="etiquetas">Etiquetas:</label>
+            <input type="text" id="etiquetas" name="etiquetas" placeholder="Etiqueta1, Etiqueta2, ..." formControlName = "etiquetas">
+          </div>
+          <div class="opciones-avanzadas">
+            <label for="visibilidad">Visibilidad:</label>
+            <select id="visibilidad" name="visibilidad" formControlName = "visibilidad">
+              <option value="publico">Público</option>
+              <option value="privado">Privado</option>
+            </select>
+          </div>
+      
+          <div class="form-group2">
+            <label for="url">url:</label>
+            <input type="url" id="url" name="url" placeholder="url" formControlName = "urlImagen">
+          </div>
+      
+          <div class="form-group2">
+            <h1>ENTRA</h1>
+            <button type="submit" (click)="actualizarRecurso()">Actualizar Contenido</button>
+          </div>
+  
+        </form>
+      </div>
+    </dialog>

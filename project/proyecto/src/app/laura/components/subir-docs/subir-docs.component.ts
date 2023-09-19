@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validator, FormControl, Validators} from '@angular/forms';
 import { Recurso } from '../../models/Recurso';
 import { ResourceService } from '../../services/resource.service';
@@ -13,10 +13,11 @@ import { ListaPruebaComponent } from '../lista-prueba/lista-prueba.component';
 export class SubirDocsComponent implements OnInit {
   formularioRecurso: FormGroup
   recursos: Array<Recurso>
-  display: boolean;
+  display : boolean;
+  
   constructor(private fb: FormBuilder, private rService: ResourceService ){
     this.recursos = new Array<Recurso>();
-    this.display = false
+    this.display = false;
     this.formularioRecurso =  fb.group({
       id : new FormControl('',[Validators.required]),
       urlImagen: new FormControl('',[Validators.required]),
@@ -27,13 +28,8 @@ export class SubirDocsComponent implements OnInit {
     })
   }
 
-  openDialog() {
-    this.display = true;
-  }
 
-  closeDialog() {
-    this.display = false;
-  }
+  
   //get recursos
   getRecursos(){
     this.rService.getRecursos().subscribe(res =>{
@@ -73,8 +69,7 @@ export class SubirDocsComponent implements OnInit {
     this.formularioRecurso.get("descripcion")?.setValue(recurso.descripcion)
     this.formularioRecurso.get("etiquetas")?.setValue(recurso.etiquetas)
     this.formularioRecurso.get("visibilidad")?.setValue(recurso.visibilidad)
-    this.openDialog()
-    this.display = true
+    this.display = !this.display
   }
 
   //Actualizar
@@ -89,7 +84,7 @@ export class SubirDocsComponent implements OnInit {
       this.rService.actualizarRecurso(recurso).subscribe(res => {
         this.getRecursos()
         this.formularioRecurso.reset()
-        this.display = false
+        this.display = !this.display
       })
     }
   }
