@@ -17,7 +17,7 @@ mat-form-field{
   }
   
   @media (max-width: 767px) {
-  .milista {
+  .container-milista {
     height: 290px;
     width: 360px;
     overflow-y:auto;
