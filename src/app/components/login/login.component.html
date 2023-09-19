@@ -1,18 +1,18 @@
 <div class="form-container mat-elevation-z5">
-    <h1 style="font-size: 2.5rem;">Bienvenido a nuestra plataforma que te acerca a tu futuro!</h1>
+    <h1>Bienvenido a nuestra plataforma que te acerca a tu futuro!</h1>
     <form [formGroup]="loginForm" (ngSubmit)="submit()">
         <mat-form-field>
-            <input matInput placeholder="Correo electrónico" formControlName="email" />
-            <mat-error *ngIf="email?.errors?.['required']" style="font-size: 1.8rem;">
-                El correo electrónico es requerido
+            <input matInput placeholder="Correo electronico" formControlName="email" />
+            <mat-error *ngIf="email?.errors?.['required']">
+                El correo electronico es requerido
             </mat-error>
-            <mat-error *ngIf="email?.errors?.['email']" style="font-size: 1.8rem;">
-                Por favor, introduce un formato de correo electrónico correcto
+            <mat-error *ngIf="email?.errors?.['email']">
+                Please enter a correct email format
             </mat-error>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Contraseña" formControlName="password" type="password" />
-            <mat-error *ngIf="password?.errors?.['required']" style="font-size: 1.8rem;">
+            <mat-error *ngIf="password?.errors?.['required']">
                 La contraseña es requerida
             </mat-error>
         </mat-form-field>
@@ -21,8 +21,6 @@
                 Iniciar sesión
             </button>
         </div>
-        <span class="center margin-top">
-            <a class="signup-button-custom" routerLink="/sign-up">Nuevo en la plataforma? ¡Regístrate!</a>
-        </span>
+        <span class="center margin-top">Nuevo en nuestra plataforma? <a class="sign-up-link" routerLink="/sign-up">Registrate!</a></span>
     </form>
 </div>
