@@ -7,9 +7,8 @@ import { CarouselComponent } from './laura/components/carousel/carousel.componen
 import { SubirDocsComponent } from './laura/components/subir-docs/subir-docs.component';
 import { NavBarComponent } from './laura/components/nav-bar/nav-bar.component';
 import { SideBarComponent } from './laura/components/side-bar/side-bar.component';
-import { FormRecursosComponent } from './laura/components/form-recursos/form-recursos.component';
 import { InicialComponent } from './nicolas/perfil/inicial/inicial.component';
-import { ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { ReactiveFormsModule, FormsModule, FormGroup} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http'
 import { SearchComponent } from './paul/components/search/search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,7 +18,6 @@ import { SearchPipe } from './paul/pipes/search.pipe';
 import { InicioBusquedaComponent } from './paul/inicio-busqueda/inicio-busqueda.component';
 import { inicialResenasComponent } from './julieth/resenas/inicialResenas/inicialResenas.component';
 import { BlogComponent } from './guayara/blog/blog.component';
-import { HomeGComponent } from './guayara/homeG/homeG.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -35,17 +33,13 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { MatMenuModule } from '@angular/material/menu';
 import { ProfileComponent } from './components/profile/profile.component';
-
 import { MatListModule } from '@angular/material/list';
-import {} from '@angular/material/form-field';
-import {} from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DateDisplayPipe } from './pipes/date-display.pipe';
-import { TimeAgoPipe } from 'time-ago-pipe';
 import { DatePipe } from '@angular/common';
 import { MatDividerModule } from '@angular/material/divider';
-import { ListResourcesComponent } from './laura/components/list-resources/list-resources.component';
-import { AddEditResourceComponent } from './laura/components/add-edit-resource/add-edit-resource.component';
+import { ListaPruebaComponent } from './laura/components/lista-prueba/lista-prueba.component';
+
 
 
 @NgModule({
@@ -56,22 +50,19 @@ import { AddEditResourceComponent } from './laura/components/add-edit-resource/a
     SubirDocsComponent,
     NavBarComponent,
     SideBarComponent,
-    FormRecursosComponent,
     InicialComponent,
     SearchComponent,
     SearchPipe,
     InicioBusquedaComponent,
     inicialResenasComponent,
     BlogComponent,
-    HomeGComponent,
     LoginComponent,
     HomeComponent,
     LandingComponent,
     SignUpComponent,
     ProfileComponent,
     DateDisplayPipe,
-    ListResourcesComponent,
-    AddEditResourceComponent,
+    ListaPruebaComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,56 +1,84 @@
 <app-nav-bar></app-nav-bar>
 <app-side-bar></app-side-bar>
-<div class="container">
-  <h2>¿Quieres subir algo para tus compañeros?</h2>
-  <form action="#" method="post" enctype="multipart/form-data">
-    <!-- Selector de tipo de contenido -->
-    <div class="form-group">
-      <label for="tipoContenido">Selecciona el tipo de contenido:</label>
-      <select id="tipoContenido" name="tipoContenido" [(ngModel)]="selectedContentType" (change)="onContentTypeChange()">
-        <option value="documento">Subir Documento (PDF, DOC, DOCX)</option>
-        <option value="enlace">Enlace</option>
-        <option value="video">Subir Video (MP4, AVI)</option>
-      </select>
-    </div>
 
-    <!-- Subir Documento -->
-    <div class="form-group" id="grupoDocumento" *ngIf="selectedContentType === 'documento'">
-      <label for="fileDocumento">Subir Documento (PDF, DOC, DOCX):</label>
-      <input type="file" id="fileDocumento" name="fileDocumento" accept=".pdf, .doc, .docx">
-    </div>
+<body>
+  <div class="container">
+    <div class="ancho">
+      <div class="contenedor-todo">
+        <!--El titulo-->
+        <header class="encabezado">
+          <h1 id="title">¿Quieres subir algo para tus compañeros? <br></h1>
+          <p id="description">¡Sube tu archivo aqui!</p>
+        </header>
+        <!--Inicio formulario-->
+        <form action="" [formGroup]="formularioRecurso" method="post" enctype="multipart/form-data">
+          <!-- Selector de tipo de contenido -->
+          <div class="form-group">
+            <label for="tipoContenido">Selecciona el tipo de contenido:</label>
+            <select id="tipoContenido" name="tipoContenido" [(ngModel)]="selectedContentType"
+              (change)="onContentTypeChange()">
+              <option value="documento">Subir Documento (PDF, DOC, DOCX)</option>
+              <option value="enlace">Enlace</option>
+              <option value="video">Subir Video (MP4, AVI)</option>
+            </select>
+          </div>
 
-    <!-- Subir Enlace -->
-    <div class="form-group" id="grupoEnlace" *ngIf="selectedContentType === 'enlace'">
-      <label for="enlace">Enlace:</label>
-      <input type="url" id="enlace" name="enlace" placeholder="https://ejemplo.com">
-    </div>
+          <!-- Subir Documento -->
+          <div class="form-group" id="grupoDocumento" *ngIf="selectedContentType === 'documento'">
+            <label for="fileDocumento">Subir Documento (PDF, DOC, DOCX):</label>
+            <input type="file" id="fileDocumento" name="fileDocumento" accept=".pdf, .doc, .docx">
+          </div>
 
-    <!-- Subir Video -->
-    <div class="form-group" id="grupoVideo" *ngIf="selectedContentType === 'video'">
-      <label for="video">Subir Video (MP4, AVI, etc.):</label>
-      <input type="file" id="video" name="video" accept=".mp4, .avi">
-    </div>
+          <!-- Subir Enlace -->
+          <div class="form-group" id="grupoEnlace" *ngIf="selectedContentType === 'enlace'">
+            <label for="enlace">Enlace:</label>
+            <input type="url" id="enlace" name="enlace" placeholder="https://ejemplo.com">
+          </div>
 
-    <!-- Descripción -->
-    <div class="form-group">
-      <label for="descripcion">Descripción:</label>
-      <textarea id="descripcion" name="descripcion" rows="4"></textarea>
-    </div>
+          <!-- Subir Video -->
+          <div class="form-group" id="grupoVideo" *ngIf="selectedContentType === 'video'">
+            <label for="video">Subir Video (MP4, AVI, etc.):</label>
+            <input type="file" id="video" name="video" accept=".mp4, .avi">
+          </div>
 
-    <!-- Opciones avanzadas -->
-    <div class="opciones-avanzadas">
-      <label for="etiquetas">Etiquetas:</label>
-      <input type="text" id="etiquetas" name="etiquetas" placeholder="Etiqueta1, Etiqueta2, ...">
+          <!-- Descripción -->
+          <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" rows="4" formControlName="descripcion"></textarea>
+          </div>
+
+          <!-- Opciones avanzadas -->
+          <div class="opciones-avanzadas">
+            <label for="etiquetas">Etiquetas:</label>
+            <input type="text" id="etiquetas" name="etiquetas" placeholder="Etiqueta1, Etiqueta2, ..."
+              formControlName="etiquetas">
+          </div>
+          <div class="opciones-avanzadas">
+            <label for="visibilidad">Visibilidad:</label>
+            <select id="visibilidad" name="visibilidad" formControlName="visibilidad">
+              <option value="publico">Público</option>
+              <option value="privado">Privado</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="id">id:</label>
+            <input type="id" id="id" name="id" placeholder="identificacion" formControlName="id">
+          </div>
+
+          <div class="form-group">
+            <label for="url">url:</label>
+            <input type="url" id="url" name="url" placeholder="url" formControlName="urlImagen">
+          </div>
+
+          <div class="componentesFormulario">
+            <button type="submit" id="submit" class="input-boton" title="bt" (click)="crearRecurso()">
+              Subir contenido
+            </button>
+          </div>
+        </form>
+
+      </div>
     </div>
-    <div class="opciones-avanzadas">
-      <label for="visibilidad">Visibilidad:</label>
-      <select id="visibilidad" name="visibilidad">
-        <option value="publico">Público</option>
-        <option value="privado">Privado</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <button type="submit">Subir Contenido</button>
-    </div>
-  </form>
-</div>
+  </div>
+</body>

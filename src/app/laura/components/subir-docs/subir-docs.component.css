@@ -1,24 +1,11 @@
 /* Estilo del formulario */
 .container {
-  margin-left: 550px; /* Centro el formulario horizontalmente y ajusto el margen superior */
+  margin-left: 400px; /* Centro el formulario horizontalmente y ajusto el margen superior */
   margin-top: 100px;
-  margin-bottom: 50px;
+  margin-bottom: 500px;
   max-width: 600px; /* Limito el ancho del formulario para una mejor legibilidad */
   padding: 20px;
-  background-color: #f6fbfb; /* Un fondo más claro para el formulario */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sutil sombra */
   text-align: center;
-}
-
-.container h2 {
-  margin-bottom: 20px;
-  background-color: #007BFF; /* Cambio el color de fondo del encabezado */
-  color: #fff; /* Texto en color blanco */
-  padding: 20px;
-  border-top-left-radius: 10px; /* Borde redondeado en la esquina superior izquierda */
-  border-top-right-radius: 10px; /* Borde redondeado en la esquina superior derecha */
-
 }
 
 .form-group {
@@ -90,6 +77,392 @@ textarea {
 }
 
 #tipoContenido:focus {
-  border-color: #007BFF; /* Cambio el color del borde en el enfoque */
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Añado una sombra en el enfoque */
+  border-color: #fefefe; /* Cambio el color del borde en el enfoque */
+  box-shadow: 0 0 8px rgba(251, 251, 252, 0.5); /* Añado una sombra en el enfoque */
+}
+
+/* Estilos para la tabla */
+.mi-tabla {
+  width: 100%;
+}
+
+.mi-tabla th, .mi-tabla td {
+  padding: 8px;
+  text-align: left;
+}
+
+.mi-tabla th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.mi-tabla tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Estilo para los bordes de la tabla */
+.mi-tabla th, .mi-tabla td {
+  border: 1px solid #ddd;
+}
+
+/* Estilos para cuando se pasa el mouse sobre una fila */
+.mi-tabla tr:hover {
+  background-color: #ddd;
+}
+.BordeBotones {
+  display: flex;
+  /* Utilizamos flexbox para alinear elementos internos */
+  align-items: center;
+  width: auto;
+  height: 35px;
+  border-radius: 20px;
+  background: rgba(80, 146, 185, 0.27);
+  margin-top: 1px;
+  padding-left: 50px;
+  /* Agregamos un pequeño espacio a la izquierda para separar los botones del borde */
+}
+
+.BotonConImagen1 {
+  display: flex;
+  flex-direction: column;
+  /* Coloca la imagen debajo del botón */
+  background: transparent;
+  border: none;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  
+  /* Centra el texto en el botón */
+}
+
+.BotonConImagen1 img {
+  width: 20px;
+  /* Ajusta el tamaño de la imagen */
+  height: 20px;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Estilo para el fondo oscuro detrás del cuadro de diálogo */
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Asegura que esté encima de otros elementos */
+}
+
+/* Estilo para el cuadro de diálogo */
+.modal-dialog {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  max-width: 80%; /* Ancho máximo del cuadro de diálogo */
+  position: relative;
+}
+
+/* Estilo para el botón de cierre */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+/* Estilo para el fondo oscuro detrás del cuadro de diálogo */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 5, 5, 0.5); /* Fondo semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Asegura que esté encima de otros elementos */
+}
+
+/* Estilo para el cuadro de diálogo */
+.modal-content2 {
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  padding: 20px;
+  width: 400px; /* Ancho del cuadro de diálogo */
+  max-width: 80%; /* Ancho máximo */
+  position: relative;
+}
+
+/* Estilo para el botón de cierre */
+.modal-content2 .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333; /* Color de texto para el botón de cierre */
+}
+
+
+
+/* Estilo para las etiquetas de formulario */
+.modal-content2 label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555; /* Color de texto para las etiquetas */
+}
+
+/* Estilo para los campos de entrada de formulario */
+.modal-content2 input[type="file"],
+.modal-content2 input[type="url"],
+.modal-content2 select,
+.modal-content2 input[type="text"],
+.modal-content2 textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+/* Estilo para el botón de enviar */
+.modal-content2 button[type="submit"] {
+  background-color: #007BFF; /* Color de fondo del botón */
+  color: #fff; /* Color de texto del botón */
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Estilo para el botón de enviar al pasar el mouse */
+.modal-content2 button[type="submit"]:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilo para las opciones avanzadas */
+.modal-content2 .opciones-avanzadas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Estilo para el fondo de los campos de selección */
+.modal-content2 select {
+  background-color: #f2f2f2; /* Color de fondo de los campos de selección */
+}
+
+/* Estilo para las filas pares en la tabla dentro del cuadro de diálogo */
+.modal-content2 tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fondo de las filas pares */
+}
+
+/* Estilo para los bordes de la tabla dentro del cuadro de diálogo */
+.modal-content2 th,
+.modal-content2 td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* Estilo para las filas al pasar el mouse en la tabla dentro del cuadro de diálogo */
+.modal-content2 tr:hover {
+  background-color: #ddd; /* Color de fondo al pasar el mouse */
+}
+
+/* Establece el fondo de la página */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-image: linear-gradient(
+    115deg,
+    rgba(58, 58, 158, 0.8),
+    rgba(136, 136, 206, 0.7)
+  ),
+  url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+h1{
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0;
+    font-weight: bold;
+}
+
+h1, p{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+p{
+    font-size: 1.125rem;
+    font-style: italic;
+    font-weight: 200;
+    text-shadow: 1px 1px 1px rgba(255, 254, 254, 0.4);
+}
+
+div{
+    display: block;
+}
+
+.ancho{
+    width: 720px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+}
+label{
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.contenedor-todo{
+    width: 100%;
+    margin-right: 400px;
+    display: block;
+    margin-bottom: 200px;
+}
+
+.encabezado{
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    margin-bottom: 1.875rem;
+    color: white;
+    margin-left: 150px;
+}
+
+form{
+    display: block;
+    margin-top: 0em;
+    background-color: rgba(27,27, 50, 0.8);
+    border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+}
+
+@media (min-width: 400px){
+    form {
+        padding: 2.5rem;
+    }
+}
+
+input, button, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.contenedor-formulario{
+    display: list-item; 
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.componentesFormulario{
+   margin: 0 auto 1.25rem auto;
+   padding: 0.25rem;
+}
+.parteFormulario{
+    display: block;
+    width: 100%;
+    height: 2.375rem;
+    padding: 0.375rem 0.75rem;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+    transition: border-color 0.15 ease-in-out box-shadow 0.15s ease-in-out;
+    -webkit-transition: border-color 0.15 ease-in-out box-shadow 0.15s ease-in-out;
+    -moz-transition: border-color 0.15 ease-in-out box-shadow 0.15s ease-in-out;
+    -ms-transition: border-color 0.15 ease-in-out box-shadow 0.15s ease-in-out;
+    -o-transition: border-color 0.15 ease-in-out box-shadow 0.15s ease-in-out;
+}
+
+.input[type='radio' i]{
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 0px 5px;
+    padding: initial;
+    border: initial;
+}
+.input-radio, .input-check{
+    display: inline-block;
+    margin-right: 0.625rem;
+    min-height: 1.25rem;
+    min-width: 1.25rem;
+}
+
+.input-comentario{
+    min-height: 120px;
+    width: 100%;
+    padding: 0.625rem;
+    resize: vertical;
+}
+
+input, button, select, textarea{
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button{
+    border: none;
+}
+
+.input-boton{
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background: #37af65;
+    color: inherit;
+    border-radius: 2px;
+    cursor: pointer;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+.input-boton:hover{
+    background: #495057;
 }

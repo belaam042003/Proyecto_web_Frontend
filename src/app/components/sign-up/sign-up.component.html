@@ -1,3 +1,5 @@
+<body>
+    
 <div class="form-container mat-elevation-z5">
     <h1>Estamos felices por tenerte en nuestra plataforma a un solo paso!</h1>
     <form [formGroup]="signUpForm" (ngSubmit)="submit()">
@@ -32,9 +34,10 @@
             Las contraseñas deben de coincidir
         </mat-error>
         <div class="center margin-top">
-            <button mat-raised-button color="primary" type="submit">
-                Registrate!
-            </button>
+            <button mat-raised-button class="sign-up-button" type="submit">
+                Regístrate
+            </button>            
         </div>
     </form>
 </div>
+</body>

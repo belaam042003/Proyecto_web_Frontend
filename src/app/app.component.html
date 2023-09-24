@@ -1,6 +1,7 @@
-<mat-toolbar color="primary" style="background-color: #4C97C1;">
-  ConnectEDU
+<mat-toolbar color="primary" style="background-color: rgb(80, 121, 211);"> <!-- Ajusta el último valor para la opacidad (0.5 = 50% de opacidad) -->
+     ConnectEDU
   <ng-container *ngIf="user$ | async as user; else loginButton">
+    
     <button mat-button [matMenuTriggerFor]="userMenu" class="user-button">
       <img
         width="40"

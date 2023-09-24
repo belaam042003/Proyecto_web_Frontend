@@ -1,0 +1,449 @@
+/* Estilos para la tabla */
+.mi-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.mi-tabla th, .mi-tabla td {
+    padding: 8px;
+    text-align: left;
+}
+
+.mi-tabla th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.mi-tabla tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilo para los bordes de la tabla */
+.mi-tabla th, .mi-tabla td {
+    border: 1px solid #ddd;
+}
+
+/* Estilos para cuando se pasa el mouse sobre una fila */
+.mi-tabla tr:hover {
+    background-color: #ddd;
+}
+.BordeBotones {
+    display: flex;
+    /* Utilizamos flexbox para alinear elementos internos */
+    align-items: center;
+    width: auto;
+    height: 35px;
+    border-radius: 20px;
+    background: rgba(80, 146, 185, 0.27);
+    margin-top: 1px;
+    padding-left: 50px;
+    /* Agregamos un pequeño espacio a la izquierda para separar los botones del borde */
+}
+
+.BotonConImagen1 {
+    display: flex;
+    flex-direction: column;
+    /* Coloca la imagen debajo del botón */
+    background: transparent;
+    border: none;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    
+    /* Centra el texto en el botón */
+}
+
+.BotonConImagen1 img {
+    width: 20px;
+    /* Ajusta el tamaño de la imagen */
+    height: 20px;
+    box-shadow: none;
+    background: transparent;
+}
+
+
+/*
+    * LAYOUT RECURSOS
+    */
+    .formRecursos {
+        float: left;
+        width: 1042px;
+        height: 50px;
+        background: #a5cff8;
+        padding: 10px;
+        margin-top: 30px;
+        margin-right: 10px;
+        margin-bottom: 70px;
+        margin-left: 350px;
+        min-height: 185vh;
+        border-radius: 20px;
+        color: white;
+        box-shadow: 7px 13px 37px #000;
+        
+    }
+    
+    .formRecursos .container.gallery-container {
+        width: 1000px;
+        height: 1340px;
+        background-color: #fff;
+        color: #35373a;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+        margin-top: 10px;
+        margin-left: 10px;
+        overflow-y: auto;
+    }
+    
+    .formRecursos .tz-gallery {
+        padding: 40px;
+    }
+    
+    .formRecursos .tz-gallery .lightbox img {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        transition: 0.2s ease-in-out;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    }
+    
+    .tz-gallery img {
+        width: 33.33%;
+        /* Cada imagen ocupa 33.33% del ancho total */
+        object-fit: cover;
+        float: left;
+    }
+    
+    .formRecursos .tz-gallery .lightbox img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .formRecursos .baguetteBox-button {
+        background-color: transparent !important;
+    }
+    
+    @media (max-width: 768px) {
+        body {
+            padding: 0;
+        }
+    
+        .formRecursos .container.gallery-container {
+            border-radius: 0;
+            float: left;
+        }
+    }
+    
+    /*
+        BOTONES
+        */
+    
+        .BordeBotones {
+            display: flex;
+            /* Utilizamos flexbox para alinear elementos internos */
+            align-items: center;
+            width: auto;
+            height: 35px;
+            border-radius: 20px;
+            background: rgba(80, 146, 185, 0);
+            margin-top: 1px;
+            padding-left: 0.02px;
+            /* Agregamos un pequeño espacio a la izquierda para separar los botones del borde */
+        }
+        
+       
+    .BotonConImagen1 {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      margin: 0 5px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(80, 146, 185, 0.27);
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    }
+    
+    .BotonConImagen1 img {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .BotonConImagen1:hover {
+      background: rgba(80, 146, 185, 0.6); /* Cambia el color al pasar el ratón */
+    }
+    
+    .BotonConImagen1:not(:last-child) {
+      margin-right: 10px; /* Espaciado entre los botones */
+    }
+
+    #descripcionRecurso {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: #333;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        padding-top: 10px;
+        word-wrap: break-word; /* Permite que las palabras largas se dividan automáticamente */
+        overflow: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
+    }
+    
+/* Estilos para el cuadro de diálogo */
+.custom-dialog {
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease; /* Agrega una transición suave de 0.3 segundos */
+    transform: scale(0.8); /* Reduce el tamaño inicialmente */
+    transform-origin: center top; /* Punto de origen de la transformación */
+  }
+
+/* Estilos para mostrar el cuadro de diálogo */
+.custom-dialog[open] {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    opacity: 1; /* Hace visible el cuadro de diálogo */
+    transform: scale(1); /* Restaura el tamaño original */
+  }
+
+.dialog-title {
+    text-align: center;
+    font-size: 24px;
+    color: #007BFF;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="url"],
+  input[type="file"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+  select {
+    height: 40px;
+  }
+  
+  .actualizar {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .actualizar:hover {
+    background-color: #0056b3;
+  }
+  
+
+  body {
+    font-family: 'Arial';
+    color: #333;
+    background-color: #F2F2F2;
+    margin: 0 auto;
+}
+.contenedor {
+    width: 100%;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-align-items: center;
+        align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.btn_reaccion {
+    display: inline-flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+         -o-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px 20px;
+    border: none;
+    background: linear-gradient(90deg,#57A6FF,#E153FF);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.btn_reaccion > span {
+    color: #fff;
+}
+
+.btn_reaccion .reacciones {
+    display: flex;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    background-color: #D4E4FF;
+    padding: 5px;
+    border-radius: 5rem;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 200ms ease-in;
+         -o-transition: all 200ms ease-in;
+            transition: all 200ms ease-in;
+    -webkit-transform: translateY(15px);
+       -moz-transform: translateY(15px);
+        -ms-transform: translateY(15px);
+         -o-transform: translateY(15px);
+            transform: translateY(15px);
+}
+.btn_reaccion:hover .reacciones {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+       -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+         -o-transform: translateY(0);
+            transform: translateY(0);
+}
+.btn_reaccion .reacciones::before {
+    content: '';
+    display: block;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 12px 12px 12px 12px;
+    border-top-color: #D4E4FF;
+    position: absolute;
+    bottom: -24px;
+    left: calc(50% - 12px);
+}
+
+.btn_reaccion .reaccion {
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background-color: #fff;
+    border-radius: 5rem;
+    -webkit-transition: all 200ms ease-in;
+         -o-transition: all 200ms ease-in;
+            transition: all 200ms ease-in;
+}
+.btn_reaccion .reaccion + .reaccion {
+    margin-left: 5px;
+}
+.btn_reaccion .reaccion i {
+    font-size: 1.3rem;
+}
+.btn_reaccion .reaccion > span {
+    display: block;
+    width: auto;
+    font-size: .9em;
+    position: absolute;
+    top: -1.5rem;
+    font-weight: bold;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    color: #333;
+    -webkit-transition: all 200ms ease-in;
+         -o-transition: all 200ms ease-in;
+            transition: all 200ms ease-in;
+    -webkit-transform: translateY(15px);
+       -moz-transform: translateY(15px);
+        -ms-transform: translateY(15px);
+         -o-transform: translateY(15px);
+            transform: translateY(15px);
+}
+.btn_reaccion .reaccion:nth-child(1):hover > span,
+.btn_reaccion .reaccion:nth-child(2):hover > span,
+.btn_reaccion .reaccion:nth-child(3):hover > span,
+.btn_reaccion .reaccion:nth-child(4):hover > span,
+.btn_reaccion .reaccion:nth-child(5):hover > span {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+       -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+         -o-transform: translateY(0);
+            transform: translateY(0);
+}
+.btn_reaccion .reaccion:nth-child(1):hover {
+    background-color: #4E88FF;
+    color: #fff;
+}
+.btn_reaccion .reaccion:nth-child(2):hover {
+    background-color: #FF3D3D;
+    color: #fff;
+}
+.btn_reaccion .reaccion:nth-child(3):hover {
+    background-color: #FF7D3D;
+    color: #fff;
+}
+.btn_reaccion .reaccion:nth-child(4):hover {
+    background-color: #A63DFF;
+    color: #fff;
+}
+.btn_reaccion .reaccion:nth-child(5):hover {
+    background-color: #FF3D3D;
+    color: #fff;
+}
+
+/* animacion salto */
+.btn_reaccion .reaccion:hover {
+    -webkit-animation-duration: 500ms;
+         -o-animation-duration: 500ms;
+            animation-duration: 500ms;
+    -webkit-animation-timing-function: ease-out;
+         -o-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    -webkit-animation-name: saltar;
+         -o-animation-name: saltar;
+            animation-name: saltar;
+}
+@keyframes saltar {
+    from {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -o-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+    to {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+
+

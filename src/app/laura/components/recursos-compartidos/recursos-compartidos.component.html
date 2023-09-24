@@ -1,22 +1,27 @@
+<app-nav-bar></app-nav-bar>
+<app-side-bar></app-side-bar>
+
+
+<div id="container">
+    <p class ="h"><a > Informáte</a></p>
+</div>
+<app-carousel></app-carousel>
+
 <body>
-    <app-side-bar></app-side-bar>
-    <app-nav-bar></app-nav-bar>
-    <app-carousel></app-carousel>
-    
-    <div class="container2">
-        <h2 class="txtRec">Recursos compartidos por la comunidad educativa</h2>
+    <div id="container">
+        <p><a> Accede a recursos</a></p>
+    </div>
+    <app-lista-prueba></app-lista-prueba>
+
+    <div class="container1">
+        <h1>¿Quieres compartir documentos útiles a la comunidad educativa?</h1>
+        <p>Si es así, da click en el siguiente botón:</p>
+        <a class="boton-cargar" (click)="direccionarPag('/subirDocs')">Cargar Documentos</a>
     </div>
 
-    <app-form-recursos></app-form-recursos>
-
-        <div class="container1">
-            <h1>¿Quieres compartir documentos útiles a la comunidad educativa?</h1>
-            <p>Si es así, da click en el siguiente botón:</p>
-            <a class="boton-cargar" (click)="direccionarPag('/subirDocs')">Cargar Documentos</a>
-        </div>
-
-        <button class="boton-plus" (click)="direccionarPag('/subirDocs')">
-            <img src = "https://cdn-icons-png.flaticon.com/128/3524/3524388.png">
-        </button>
-    
+    <div #plusButton class="plus-button"></div>
+    <div #socialButtonsTwitter class="social-button twitter-button"></div>
+    <div #socialButtonsFacebook class="social-button facebook-button"></div>
+    <div #socialButtonsPinterest class="social-button pinterest-button"></div>
+    <div #socialButtonsInsta class="social-button insta-button"></div>
 </body>

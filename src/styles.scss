@@ -1,39 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.form-container {
-    display: block;
-    width: 300px; /* Ancho fijo */
-    margin: auto;
-    background: #eceff1;
-    padding: 20px; /* Disminuimos el padding para no hacerlo tan grande */
-    border-radius: 16px;
-    height: auto; /* Configuramos la altura a "auto" para que se ajuste al contenido */
-    overflow: auto; /* Agregamos un desbordamiento automático si el contenido es más grande que el contenedor */
-}
-
-
-.form-container mat-form-field {
+/* Reset de márgenes y altura del body y el html */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
+  }
+  
+  /* Estilo general del body */
+  body {
+    /*background-image: url('../src/assets/images/2.png');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    color : white;
+  }
+  
+  /* Pseudo-elemento para opacidad */
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-}  
+    height: 100%;
 
-.center {
+    z-index: -1;
+  }
+  
+  /* Contenedor del formulario */
+  .form-container {
+    width: 300px;
+    margin: 20px auto; /* Utiliza margen automático para centrar vertical y horizontalmente */
+    background: #eceff1;
+    padding: 20px;
+    border-radius: 16px;
+    overflow: auto;
+    position: relative;
+  }
+  
+  /* Estilo para los campos de formulario */
+  .form-container mat-form-field {
+    width: 100%;
+  }
+  
+  /* Clase para centrar elementos horizontalmente */
+  .center {
     display: flex;
     justify-content: center;
-}
-
-.margin-top {
+  }
+  
+  /* Clase para agregar margen superior */
+  .margin-top {
     margin-top: 16px;
-}
-
-.text-center {
+  }
+  
+  /* Clase para centrar texto horizontalmente */
+  .text-center {
     text-align: center;
-}
+  }
 
-html{
-    background-image: url('../src/assets/images/La-Sergio-4.0-transformación-digital-cuarta-revolución-industrial-mundo-4.0.jpg');
-    background-size: cover; // Ajusta el tamaño de la imagen para cubrir todo el fondo
-    background-repeat: no-repeat;
-}
+  //ESTO SIRVE PARA EL NAVBAR
+
+  :root {
+    --lerp-0: 1; /* === sin(90deg) */
+    --lerp-1: calc(sin(30deg));
+    --lerp-2: calc(sin(20deg));
+    --lerp-3: calc(sin(10deg));
+    --lerp-4: 0;
+  }

@@ -1,8 +1,59 @@
-<nav class="sidebar">
-    <ul>
-    <li><img src="https://cdn-icons-png.flaticon.com/128/1946/1946436.png" (click)="direccionarPag('recursos')"><a> Inicio</a></li>
-    <li><img src="https://cdn-icons-png.flaticon.com/128/456/456212.png"(click)="direccionarPag('recursos')"><a>  Perfil</a></li>
-    <li><img src="https://cdn-icons-png.flaticon.com/128/566/566718.png"(click)="direccionarPag('recursos')"><a> Chat</a></li>
-    <li><img src="https://cdn-icons-png.flaticon.com/128/18/18436.png"(click)="direccionarPag('recursos')"><a>  Ayuda</a></li>
-    </ul>
-</nav>
+<body>
+    <nav class="main-menu">
+      <ul>
+        <li>
+            <a (click)="direccionarPag('recursos')">
+              <i class="fa fa-home nav-icon" >
+                  <img src="https://cdn-icons-png.flaticon.com/128/1946/1946436.png">
+              </i>
+              <span class="nav-text">Home</span>
+            </a>
+          </li>
+        <li>
+          <a (click)="direccionarPag('recursos')">
+            <i class="fa fa-home nav-icon" >
+                <img src="https://cdn-icons-png.flaticon.com/128/1946/1946436.png">
+            </i>
+            <span class="nav-text">Home</span>
+          </a>
+        </li>
+
+        <li>
+            <a (click)="direccionarPag('profile')">
+                <i class="fa fa-home nav-icon" >
+                    <img src="https://cdn-icons-png.flaticon.com/128/456/456212.png">
+                </i>
+                <span class="nav-text">Perfil</span>
+              </a>
+        </li>
+
+        <li>
+            <a (click)="direccionarPag('home')">
+                <i class="fa fa-home nav-icon" >
+                    <img src="https://cdn-icons-png.flaticon.com/128/566/566718.png">
+                </i>
+                <span class="nav-text">Chat</span>
+              </a>
+        </li>
+
+        <li>
+            <a (click)="direccionarPag('blog')">
+                <i class="fa fa-home nav-icon" >
+                    <img src="https://cdn-icons-png.flaticon.com/128/1828/1828911.png">
+                </i>
+                <span class="nav-text">Blog</span>
+              </a>
+        </li>
+      </ul>
+      <ul class="logout">
+        <li>
+            <a (click)="direccionarPag('recursos')">
+                <i class="fa fa-home nav-icon" >
+                    <img src="https://cdn-icons-png.flaticon.com/128/18/18436.png" >
+                </i>
+                <span class="nav-text">Ayuda</span>
+              </a>
+        </li>  
+      </ul>
+   </nav>
+</body>

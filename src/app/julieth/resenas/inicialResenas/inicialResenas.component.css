@@ -1,56 +1,66 @@
-.comentarios .caja-contenedor{
+/* Estilos para la caja de comentarios */
+.comentarios-box {
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+/* Estilos para el campo de entrada de texto */
+.comentario-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Estilos para el botón de enviar */
+.comentario-btn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Estilos para los comentarios anteriores */
+.comentario-anterior {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+
+.calificacion {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
 }
 
-
-.comentarios .caja-contenedor .caja{
-    background-color: aquamarine;
-    margin: 1rem;
-    padding: 1rem;
-    text-align: center;
-    position: relative;
-    border: .1rem solid rgba(0, 0, 0, .2);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
-    flex: 1 1 30rem;
-    border-radius: .5rem;
-
-}   
-
-.comentarios .caja-contenedor .caja .fa-solid .fa-book{
-    position: absolute;
-    top: 1rem;
-    right: 2rem;
-    font-size: 8rem;
-    color: var(--limon);
-    opacity: .3;
+.calificacion label {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s ease-in-out;
 }
 
-
-.comentarios .caja-contenedor .caja .user img{
-    border-radius: 50%;
-    object-fit: cover;
-    height: 8rem;
-    width: 8rem;
-    margin-top: 2rem;
+.calificacion label:hover,
+.calificacion label:hover ~ label,
+.calificacion input[type="radio"]:checked ~ label {
+    color: #FFD700; /* Cambiar color a dorado cuando se selecciona una estrella o se pasa el mouse sobre ellas */
 }
 
-.comentarios .caja-contenedor .caja  .user h3{
-    color:var(--verde);
-    font-size: 2rem;
-
+.calificacion input[type="radio"] {
+    display: none;
 }
 
-.comentarios .caja-contenedor .caja .user .stars i{
-    color:var(--verde);
-    font-size: 1.5rem;
-    padding: 1rem 0;
-}
-
-.comentarios .caja-contenedor .caja .reseña{
-    color: #666;
-    font-size: 1.5rem;
-    padding: 1rem;
+.calificacion label.strella-seleccionada,
+.calificacion input[type="radio"]:checked ~ label {
+    color: #FFD700; /* Cambiar color a dorado cuando se selecciona una estrella */
 }

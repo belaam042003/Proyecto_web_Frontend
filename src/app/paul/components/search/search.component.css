@@ -8,11 +8,11 @@ mat-form-field{
 }*/
 .container {
     display: flex;
-    justify-content: center; /* Centrar 
-    horizontalmente */
+    justify-content: center; 
     align-items: flex-start; /* Mantener en su posición vertical original */
     overflow: hidden;
-    margin-left: 35%;
+    margin-top: 40px;
+    margin-left: 40px;
     width: 300px;
   }
   
@@ -40,3 +40,10 @@ mat-form-field{
 li {
     margin: 10px;
 }
+
+/* CSS para forzar la apertura de la lista hacia abajo */
+.mat-autocomplete-panel {
+  top: auto !important;
+  bottom: 0 !important;
+}
+

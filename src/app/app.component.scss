@@ -1,9 +1,18 @@
 mat-toolbar {
   justify-content: space-between;
+  position: fixed;
+  top: 0; /* Asegura que esté en la parte superior de la pantalla */
+  width: 100%;
+  z-index: 1000;
+}
+
+.mat-toolbar {
+  padding: 0 !important; /* Anula los estilos de relleno predeterminados de Angular Material */
+  margin: 0 !important; /* Anula los márgenes predeterminados de Angular Material */
+  height: 52px;
 }
 
 .profile-image-toolbar {
   border-radius: 100%;
-  margin-right: 8px;
+  margin-right: auto;
 }
-

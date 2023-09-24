@@ -1,5 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
+/* Hoja de estilos editor de publicacion */
 
 html,body {
     margin: 0;
@@ -8,19 +7,25 @@ html,body {
     height: 100%;
 }
 
+.blog{
+    margin-top: 10px;
+}
+
 .container {
+    border: solid 2px;
+    border-radius: 10px;
     font-family: Arial, sans-serif;
     margin: 0 auto;
     padding: 20px;
-    max-width: 600px;
+    max-width: 600px; /*tamaño recuadro del editor*/
+    height: 100%; /* Altura completa de la pantalla */
+    position: relative; /*Posición fija para que se quede en la pantalla*/
+    top: 0; /* Alineado en la parte superior */
+    left: -200px; /* Alineado a la izquierda */
 }
 
 h1 {
     text-align: center;
-}
-
-.share-form {
-    margin-bottom: 20px;
 }
 
 textarea {
@@ -54,4 +59,56 @@ button:hover {
 
 .post {
     margin-bottom: 10px;
+}
+
+/* Hoja de estilos publicacion */
+
+#principal{
+    width: 80%;
+    height: auto; overflow: hidden;
+    /* border: 1px solid; */
+    margin: 10px auto;
+}
+
+#publicaciones{
+    width: 70%;
+    height: auto; overflow: hidden;
+    /* border: 1px solid red; */
+    margin-top: 10px;
+}
+
+.post{
+    width: 99%;
+    height: auto; overflow: hidden;
+    padding: 7px 7px;
+    background-color: #fdfdfd;
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: #0489B1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #ccc;
+}
+
+.enlace-post{
+    text-decoration: none;
+}
+
+#publicaciones a .titulo-post{
+    color: #6e6e6e;
+    font-size: 22px;
+    font-family: 'calibri ligth';
+}
+
+#publicaciones a .titulo-post:hover{
+    text-decoration: underline;
+}
+
+#publicaciones .img-post{
+    width: 150px;
+    height: 100px;
+    float: left;
+    margin: 7px 7px 7px 0px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
