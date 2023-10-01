@@ -1,0 +1,15 @@
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 65%;
+      max-height: 50%;
+      margin: auto;
+      margin-top: 5px;
+  }
+
+  .container {
+    margin-left: 200px;
+    border: none; /* Establece el borde como "none" para eliminar cualquier borde */
+    box-shadow: transparent; /* Establece la sombra como "none" para eliminar cualquier sombra */
+    
+  }
+  

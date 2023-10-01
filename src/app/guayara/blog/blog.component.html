@@ -1,0 +1,33 @@
+<app-nav-bar></app-nav-bar>
+<app-side-bar></app-side-bar>
+<div class = "blog">
+    <div class="container">
+
+        <!-- Formulario para compartir contenido -->
+        <div class="share-form">
+            <textarea [(ngModel)]="newPost" placeholder="Escribe tu publicación"></textarea>
+            <button (click)="sharePost()">Compartir</button>
+        </div>
+    </div>
+
+    <section id="principal">
+        <section id="publicaciones">
+            <article class="post">
+
+                <a href="" class="enlace-post">
+                    <h2 class="titulo-post">Titulo de la noticia</h2>
+                </a>
+                <a href="" class="enlace-post">
+                    <h3 class="titulo-usuario">User Name</h3>
+                </a>
+                <!-- <img scr="" class="img-post">  -->
+                <p class="parrafo post">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt sapiente totam voluptatibus
+                    laboriosam unde eveniet consequuntur labore neque dolorem sequi. Harum earum omnis odio esse eaque
+                    excepturi, id voluptas quae.
+                </p>
+                <button>Comentarios</button>
+            </article>
+        </section>
+    </section>
+</div>

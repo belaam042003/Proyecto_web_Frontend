@@ -1,0 +1,26 @@
+
+<body>
+    <div class="comentarios-box">
+        <h2>Califica este producto:</h2>
+        <div class="calificacion" id="calificacion">
+            <input type="radio" id="estrella5" name="calificacion" value="5" />
+            <label for="estrella5">&#9733;</label>
+            <input type="radio" id="estrella4" name="calificacion" value="4" />
+            <label for="estrella4">&#9733;</label>
+            <input type="radio" id="estrella3" name="calificacion" value="3" />
+            <label for="estrella3">&#9733;</label>
+            <input type="radio" id="estrella2" name="calificacion" value="2" />
+            <label for="estrella2">&#9733;</label>
+            <input type="radio" id="estrella1" name="calificacion" value="1" />
+            <label for="estrella1">&#9733;</label>
+        </div>
+        <h2>Deja un comentario:</h2>
+        <input type="text" id="comentario" class="comentario-input" placeholder="Escribe tu comentario...">
+        <button onclick="agregarComentario()" class="comentario-btn">Enviar</button>
+        <div id="comentarios-anteriores"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+

@@ -1,0 +1,33 @@
+<body>
+
+<div class="form-container mat-elevation-z5">
+    <h1 style="font-size: 2.5rem;">Bienvenido a nuestra plataforma que te acerca a tu futuro!</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <mat-form-field>
+            <input matInput placeholder="Correo electrónico" formControlName="email" />
+            <mat-error *ngIf="email?.errors?.['required']" style="font-size: 1.8rem;">
+                El correo electrónico es requerido
+            </mat-error>
+            <mat-error *ngIf="email?.errors?.['email']" style="font-size: 1.8rem;">
+                Por favor, introduce un formato de correo electrónico correcto
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Contraseña" formControlName="password" type="password" />
+            <mat-error *ngIf="password?.errors?.['required']" style="font-size: 1.8rem;">
+                La contraseña es requerida
+            </mat-error>
+        </mat-form-field>
+        <div class="center margin-top">
+            <button mat-raised-button class="login-button-custom" type="submit">
+                Iniciar sesión
+            </button>
+        </div>
+        <span class="center margin-top">
+            <a class="signup-button-custom" routerLink="/sign-up">Nuevo en la plataforma? ¡Regístrate!</a>
+        </span>
+    </form>
+</div>
+
+    
+</body>
