@@ -34,17 +34,19 @@
 
 /*
 CONTAINER PARA SUBIR DOCUMENTOS*/
-
 .container1 {
-  display: block;
-  margin-top: 200px;
-  max-width: 800px;
+  display: flex;
+  flex-direction: column; /* Cambia la dirección de flexión a columna */
+  margin-top: 20px;
+  margin-bottom: auto;
+  width: 700px;
+  height: 250px;
   margin-left: 450px;
-  text-align: center;
-  padding: 20px;
+  text-align: center; /* Centra el contenido horizontalmente */
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: center;
 }
 
 .container1 h1 {
@@ -53,8 +55,10 @@ CONTAINER PARA SUBIR DOCUMENTOS*/
 }
 
 .container1 p {
+  display: flex;
   color: #666;
   font-size: 16px;
+  margin-left: 10px;
   margin-bottom: 20px;
 }
 

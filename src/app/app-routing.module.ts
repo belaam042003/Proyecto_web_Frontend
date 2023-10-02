@@ -16,6 +16,8 @@ import { InicialComponent } from './nicolas/perfil/inicial/inicial.component';
 import { InicioBusquedaComponent } from './paul/inicio-busqueda/inicio-busqueda.component';
 import { inicialResenasComponent } from './julieth/resenas/inicialResenas/inicialResenas.component';
 import { BlogComponent } from './guayara/blog/blog.component';
+import { MostrarPerfilComponent } from './nicolas/mostrar-perfil/mostrar-perfil.component';
+
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectToHome = () => redirectLoggedInTo(['home']);
@@ -32,6 +34,7 @@ const routes: Routes = [
   { path: 'sign-up',component: SignUpComponent,...canActivate(redirectToHome),},
   { path: 'home',component: HomeComponent,...canActivate(redirectToLogin),},
   { path: 'profile',component: ProfileComponent,...canActivate(redirectToLogin),},
+  { path: 'mostrarperfil',component: MostrarPerfilComponent},
 ];
 
 @NgModule({

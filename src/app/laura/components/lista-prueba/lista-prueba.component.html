@@ -1,10 +1,27 @@
+
 <section class="formRecursos">
   <section class="container gallery-container">
     <div class="tz-gallery">
       <div class="row">
         <div *ngFor="let recurso of recursos" class="col-sm-6 col-md-4">
           <a class="lightbox">
-            <img src={{recurso.urlImagen}}>
+            <div class="image-container">
+              <img src={{recurso.urlImagen}}>
+              <button id="menu-button" type="" class="btn_reaccion">&#8942;
+                <div class="reacciones">
+                  <div class="reaccion"  type="submit" data-toggle="modal" data-target="#largeModal">
+                    <i>Edit</i>
+                    <span>Editar</span>
+                  </div>
+                  <div class="reaccion" id="mostrar" type="submit" (click)="eliminarRecurso(recurso.id)">
+                    <i>Delete</i>
+                    <span>Eliminar</span>
+                  </div>
+                </div>
+              </button>
+            </div>
+
+
             <div id="descripcionRecurso">{{ recurso.descripcion }}</div>
             {{ recurso.etiquetas }}
             {{ recurso.visibilidad }}
@@ -14,38 +31,37 @@
                   <span>Reaccionar</span>
                   <div class="reacciones">
                     <div class="reaccion">
-                      <i>i</i>
-                      <span>Puntuar</span>
+                      <i></i>
+                      <span>Me gusta</span>
                     </div>
                     <div class="reaccion">
-                      <i>i</i>
+                      <i></i>
                       <span>Me encanta</span>
                     </div>
                     <div class="reaccion">
-                      <i>i</i>
+                      <i></i>
                       <span>Sorprendido</span>
                     </div>
                     <div class="reaccion">
-                      <i>i</i>
+                      <i></i>
                       <span>Me divierte</span>
                     </div>
                     <div class="reaccion">
-                      <i>i</i>
+                      <i></i>
                       <span>Me enoja</span>
                     </div>
                   </div>
                 </button>
               </section>
-              <button class="BotonConImagen1" type="submit" data-toggle="modal" data-target="#basicModal"><img
-                  src="https://cdn-icons-png.flaticon.com/128/9710/9710511.png"></button>
-              <button class="BotonConImagen1" type="submit"><img
-                  src="https://cdn-icons-png.flaticon.com/128/8246/8246378.png"></button>
-              <button class="BotonConImagen1" type="submit" (click)="descargarArchivo()"><img
-                  src="https://cdn-icons-png.flaticon.com/128/11376/11376227.png"></button>
-              <button class="BotonConImagen1" type="submit" data-toggle="modal" data-target="#largeModal"><img
-                  src="https://cdn-icons-png.flaticon.com/128/4103/4103111.png"> </button>
-              <button class="BotonConImagen1" id="mostrar" type="submit" (click)="eliminarRecurso(recurso.id)"><img
-                  src="https://cdn-icons-png.flaticon.com/128/10515/10515922.png"> </button>
+              <button type="" class="btn_reaccion" data-toggle="modal" data-target="#basicModal">
+                <span>Comentar</span>
+              </button>
+              <button type="" class="btn_reaccion" >
+                <span>Compartir</span>
+              </button>
+              <button type="" class="btn_reaccion" (click)="descargarArchivo()">
+                <span>Guardar</span>
+              </button>
             </section>
           </a>
         </div>
@@ -54,94 +70,94 @@
   </section>
 </section>
 
-  <!-- large modal -->
-  <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="myModalLabel">Large Modal</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+<!-- large modal -->
+<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Large Modal</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="" [formGroup]="formularioRecurso" method="post" enctype="multipart/form-data">
+        <!-- Selector de tipo de contenido -->
+        <div class="form-group">
+          <label for="tipoContenido">Selecciona el tipo de contenido:</label>
+          <select id="tipoContenido" name="tipoContenido" [(ngModel)]="selectedContentType"
+            (change)="onContentTypeChange()">
+            <option value="documento">Subir Documento (PDF, DOC, DOCX)</option>
+            <option value="enlace">Enlace</option>
+            <option value="video">Subir Video (MP4, AVI)</option>
+          </select>
+        </div>
+
+        <!-- Subir Documento -->
+        <div class="form-group" id="grupoDocumento" *ngIf="selectedContentType === 'documento'">
+          <label for="fileDocumento">Subir Documento (PDF, DOC, DOCX):</label>
+          <input type="file" id="fileDocumento" name="fileDocumento" accept=".pdf, .doc, .docx">
+        </div>
+
+        <!-- Subir Enlace -->
+        <div class="form-group" id="grupoEnlace" *ngIf="selectedContentType === 'enlace'">
+          <label for="enlace">Enlace:</label>
+          <input type="url" id="enlace" name="enlace" placeholder="https://ejemplo.com">
+        </div>
+
+        <!-- Subir Video -->
+        <div class="form-group" id="grupoVideo" *ngIf="selectedContentType === 'video'">
+          <label for="video">Subir Video (MP4, AVI, etc.):</label>
+          <input type="file" id="video" name="video" accept=".mp4, .avi">
+        </div>
+
+        <!-- Descripción -->
+        <div class="form-group">
+          <label for="descripcion">Descripción:</label>
+          <textarea id="descripcion" name="descripcion" rows="4" formControlName="descripcion"></textarea>
+        </div>
+
+        <!-- Opciones avanzadas -->
+        <div class="opciones-avanzadas">
+          <label for="etiquetas">Etiquetas:</label>
+          <input type="text" id="etiquetas" name="etiquetas" placeholder="Etiqueta1, Etiqueta2, ..."
+            formControlName="etiquetas">
+        </div>
+        <div class="opciones-avanzadas">
+          <label for="visibilidad">Visibilidad:</label>
+          <select id="visibilidad" name="visibilidad" formControlName="visibilidad">
+            <option value="publico">Público</option>
+            <option value="privado">Privado</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="id">id:</label>
+          <input type="id" id="id" name="id" placeholder="identificacion" formControlName="id">
+        </div>
+
+        <div class="form-group">
+          <label for="url">url:</label>
+          <input type="url" id="url" name="url" placeholder="url" formControlName="urlImagen">
+        </div>
+
+        <div class="componentesFormulario">
+          <button type="submit" id="submit" class="input-boton" title="bt" (click)="crearRecurso()">
+            Subir contenido
           </button>
         </div>
-        <form action="" [formGroup]="formularioRecurso" method="post" enctype="multipart/form-data">
-          <!-- Selector de tipo de contenido -->
-          <div class="form-group">
-            <label for="tipoContenido">Selecciona el tipo de contenido:</label>
-            <select id="tipoContenido" name="tipoContenido" [(ngModel)]="selectedContentType"
-              (change)="onContentTypeChange()">
-              <option value="documento">Subir Documento (PDF, DOC, DOCX)</option>
-              <option value="enlace">Enlace</option>
-              <option value="video">Subir Video (MP4, AVI)</option>
-            </select>
-          </div>
-
-          <!-- Subir Documento -->
-          <div class="form-group" id="grupoDocumento" *ngIf="selectedContentType === 'documento'">
-            <label for="fileDocumento">Subir Documento (PDF, DOC, DOCX):</label>
-            <input type="file" id="fileDocumento" name="fileDocumento" accept=".pdf, .doc, .docx">
-          </div>
-
-          <!-- Subir Enlace -->
-          <div class="form-group" id="grupoEnlace" *ngIf="selectedContentType === 'enlace'">
-            <label for="enlace">Enlace:</label>
-            <input type="url" id="enlace" name="enlace" placeholder="https://ejemplo.com">
-          </div>
-
-          <!-- Subir Video -->
-          <div class="form-group" id="grupoVideo" *ngIf="selectedContentType === 'video'">
-            <label for="video">Subir Video (MP4, AVI, etc.):</label>
-            <input type="file" id="video" name="video" accept=".mp4, .avi">
-          </div>
-
-          <!-- Descripción -->
-          <div class="form-group">
-            <label for="descripcion">Descripción:</label>
-            <textarea id="descripcion" name="descripcion" rows="4" formControlName="descripcion"></textarea>
-          </div>
-
-          <!-- Opciones avanzadas -->
-          <div class="opciones-avanzadas">
-            <label for="etiquetas">Etiquetas:</label>
-            <input type="text" id="etiquetas" name="etiquetas" placeholder="Etiqueta1, Etiqueta2, ..."
-              formControlName="etiquetas">
-          </div>
-          <div class="opciones-avanzadas">
-            <label for="visibilidad">Visibilidad:</label>
-            <select id="visibilidad" name="visibilidad" formControlName="visibilidad">
-              <option value="publico">Público</option>
-              <option value="privado">Privado</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="id">id:</label>
-            <input type="id" id="id" name="id" placeholder="identificacion" formControlName="id">
-          </div>
-
-          <div class="form-group">
-            <label for="url">url:</label>
-            <input type="url" id="url" name="url" placeholder="url" formControlName="urlImagen">
-          </div>
-
-          <div class="componentesFormulario">
-            <button type="submit" id="submit" class="input-boton" title="bt" (click)="crearRecurso()">
-              Subir contenido
-            </button>
-          </div>
-        </form>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+      </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
+</div>
 
 
 
 
-  
+
 <!-- basic modal -->
 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
   <div class="modal-dialog">

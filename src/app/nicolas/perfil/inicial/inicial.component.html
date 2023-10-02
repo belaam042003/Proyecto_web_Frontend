@@ -1,110 +1,60 @@
-<app-nav-bar></app-nav-bar>
-<app-side-bar></app-side-bar>
-<div class="main-container">
-    <header>
-        <h1>Hoja de Vida de Nombre del Usuario</h1>
-    </header>
-    <div class="info-box">
-        <section>
-            <h2>Información Personal</h2>
-            <form id="personal-info-form">
-                <label for="nombre"><strong>Nombre:</strong></label>
-                <input type="text" id="nombre" name="nombre" value="Juan Pérez">
-                <label for="fecha-nacimiento"><strong>Fecha de Nacimiento:</strong></label>
-                <input type="text" id="fecha-nacimiento" name="fecha-nacimiento" value="15 de agosto de 1980">
-                <label for="correo"><strong>Correo Electrónico:</strong></label>
-                <input type="text" id="correo" name="correo" value="juan@example.com">
-                <label for="telefono"><strong>Teléfono:</strong></label>
-                <input type="text" id="telefono" name="telefono" value="(123) 456-7890">
-                <button type="button" onclick="submitPersonalInfo()">Guardar</button>
-            </form>
-        </section>
-
-        <section>
-            <h2>Experiencia Laboral</h2>
-            <form id="experiencia-laboral-form">
-                <div>
-                    <label for="empresa">Empresa:</label>
-                    <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa">
-                </div>
-                <div>
-                    <label for="puesto">Puesto:</label>
-                    <input type="text" id="puesto" name="puesto" placeholder="Nombre del puesto">
-                </div>
-                <div>
-                    <label for="fecha">Fecha:</label>
-                    <input type="text" id="fecha" name="fecha" placeholder="Año de inicio - Año de finalización">
-                </div>
-                <div>
-                    <label for="descripcion">Descripción:</label>
-                    <textarea id="descripcion" name="descripcion" placeholder="Descripción de responsabilidades y logros"></textarea>
-                </div>
-                <button type="button" onclick="submitExperienciaLaboral()">Agregar</button>
-            </form>
-        </section>
-        
-        <section>
-            <h2>Educación</h2>
-            <form id="educacion-form">
-                <div>
-                    <label for="institucion">Institución:</label>
-                    <input type="text" id="institucion" name="institucion" placeholder="Nombre de la institución">
-                </div>
-                <div>
-                    <label for="titulo">Título:</label>
-                    <input type="text" id="titulo" name="titulo" placeholder="Título obtenido">
-                </div>
-                <div>
-                    <label for="periodo">Período:</label>
-                    <input type="text" id="periodo" name="periodo" placeholder="Año de inicio - Año de finalización">
-                </div>
-                <div>
-                    <label for="logros">Logros:</label>
-                    <textarea id="logros" name="logros" placeholder="Logros académicos"></textarea>
-                </div>
-                <button type="button" onclick="submitEducacion()">Agregar</button>
-            </form>
-        </section>
-
-        <!-- Las otras secciones seguirían un patrón similar -->
+<form id="msform">
+    <div [ngSwitch]="currentStep">
+        <div *ngSwitchCase="'step1'">
+            <fieldset>
+                <form (ngSubmit)="nextStep()">
+                    <h1>Datos personales</h1>
+                    <h2 class="fs-subtitle">Nombre:</h2>
+                    <input type="text" name="Nombre" placeholder="ej. Laura"/>
+                    <h2 class="fs-subtitle">Apellidos:</h2>
+                    <input type="text" name="Apellidos" placeholder="ej. Garcia"/>
+                    <h2 class="fs-subtitle">Cédula:</h2>
+                    <input type="text" name="Cédula" placeholder="ej. 1031642828"/>
+                    <h2 class="fs-subtitle">Fecha de nacimiento:</h2>
+                    <input type="date" id="birthdate" name="birthdate" placeholder="Fecha de nacimiento" [(ngModel)]="formData.birthdate" required>
+                    <button type="submit" class="next action-button" value="Next">Next</button>
+                </form>
+            </fieldset>
+        </div>
+        <div *ngSwitchCase="'step2'">
+            <fieldset>
+                <form (ngSubmit)="nextStep()">
+                    <h1>Datos académicos</h1>
+                    <h2 class="fs-subtitle">Nivel de educación:</h2>
+                    <select type="text" name="Nivel de educación" placeholder="Nivel de educación">
+                        <option value="Primaria">Primaria</option>
+                        <option value="Secundaria">Secundaria</option>
+                        <option value="Técnico o tecnólogo">Técnico o tecnólogo</option>
+                        <option value="Bachiller">Bachiller</option>
+                        <option value="Pregrado">Pregrado</option>
+                        <option value="Postgrado">Postgrado</option>
+                        <option value="Doctorado o magister">Doctorado o magister</option>
+                      </select>
+                      <h2 class="fs-subtitle">Carrera:</h2>
+                    <input type="text" name="Carrera" placeholder="ej. Ciencias de la computación" />
+                    <h2 class="fs-subtitle">Universidad:</h2>
+                    <input type="text" name="Universidad" placeholder="ej. Sergio Arboleda" />
+                    <button type="submit" name="previous" class="previous action-button" value="Previous"
+                        (click)="prevStep()">Previous</button>
+                    <button type="submit" class="next action-button" value="Next">Next</button>
+                </form>
+            </fieldset>
+        </div>
+        <div *ngSwitchCase="'step3'">
+            <fieldset>
+                <form (ngSubmit)="submitForm()">
+                    <h1>Datos laborales</h1>
+                    <h2 class="fs-subtitle">Empresa:</h2>
+                    <input type="text" name="Empresa" placeholder="ej. Tech and code SAS" />
+                    <h2 class="fs-subtitle">Cargo:</h2>
+                    <input type="text" name="Cargo" placeholder="ej. Técnico en computadores" />
+                    <h2 class="fs-subtitle">Duración:</h2>
+                    <input type="text" name="Duración" placeholder="ej. 3 meses a 6 meses" />
+                    <button type="submit" name="previous" class="previous action-button" value="Previous"
+                        (click)="prevStep()">Previous</button>
+                    <a href="https://twitter.com/GoktepeAtakan" class="submit action-button">Submit</a>
+                </form>
+            </fieldset>
+        </div>
     </div>
-</div>
-
-<script>
-    function submitPersonalInfo() {
-        // Obtener los valores del formulario
-        const nombre = document.getElementById("nombre").value;
-        const fechaNacimiento = document.getElementById("fecha-nacimiento").value;
-        const correo = document.getElementById("correo").value;
-        const telefono = document.getElementById("telefono").value;
-
-        // Enviar los datos al servidor (usando AJAX o Fetch API) para guardarlos en la base de datos
-        // Aquí debes implementar la lógica de enviar los datos al servidor
-
-        // Por ejemplo, utilizando Fetch API
-        fetch('guardar_datos.php', {
-            method: 'POST',
-            body: JSON.stringify({
-                nombre,
-                fechaNacimiento,
-                correo,
-                telefono
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Manejar la respuesta del servidor, por ejemplo, mostrar un mensaje de éxito
-            if (data.success) {
-                alert("Información personal guardada con éxito");
-            } else {
-                alert("Error al guardar la información personal");
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    }
-</script>
+</form>
