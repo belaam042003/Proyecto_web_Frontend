@@ -40,6 +40,8 @@ import { DatePipe } from '@angular/common';
 import { MatDividerModule } from '@angular/material/divider';
 import { ListaPruebaComponent } from './laura/components/lista-prueba/lista-prueba.component';
 import { MostrarPerfilComponent } from './nicolas/mostrar-perfil/mostrar-perfil.component';
+import { EducacionComponent } from './nicolas/educacion/educacion.component';
+import { ExperienciaComponent } from './nicolas/experiencia/experiencia.component';
 
 
 
@@ -65,6 +67,8 @@ import { MostrarPerfilComponent } from './nicolas/mostrar-perfil/mostrar-perfil.
     DateDisplayPipe,
     ListaPruebaComponent,
     MostrarPerfilComponent,
+    EducacionComponent,
+    ExperienciaComponent,
 
   ],
   imports: [

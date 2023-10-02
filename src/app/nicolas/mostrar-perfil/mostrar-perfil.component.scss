@@ -41,6 +41,7 @@
     text-align: center;
     width: 88%;
   }
+
   body {
     font-family: 'Open Sans';
     font-size: 18px;
@@ -66,10 +67,12 @@
   }
   .justified {
     text-align: justify;
+    color: #000;
   }
   p.light {
-    color: #777;
+    color: #060606;
   }
+
   h2 {
     font-family: 'Open Sans';
     font-size: 30px;
@@ -95,7 +98,7 @@
   }
   .top-bar {
     height: 220px;
-    background-color: #848484;
+    background-color:#778899;
     color: #fff;
   }
   .name {
@@ -126,7 +129,7 @@
     right: false;
     bottom: 0;
     width: 350px;
-    background-color: #f7e0c1;
+    background-color:#B0C4DE;
     padding: 320px 30px 50px;
   }
   .mugshot {
@@ -143,6 +146,7 @@
   .mugshot .logo {
     margin: -23px;
   }
+
   .logo {
     display: false;
     position: absolute;
@@ -263,4 +267,24 @@
       line-height: 48px;
     }
   }
-  
+
+  .centered-content {
+    text-align: center;
+    max-width: 580px; /* Puedes ajustar este valor según tu diseño */
+    margin: 0 auto;
+}
+
+.circular-image {
+  margin-left: 25px;
+  width: 200px; /* Establece el ancho y alto deseados */
+  height: 200px;
+  overflow: hidden; /* Oculta el contenido fuera del círculo */
+  border-radius: 50%; /* Establece el radio para hacerlo circular */
+  border: 2px solid #000; /* Puedes personalizar el borde según tus preferencias */
+}
+
+.circular-image img {
+  width: 100%; /* Ajusta la imagen al círculo */
+  height: 100%;
+  object-fit: cover; /* Escala la imagen para que llene todo el círculo */
+}

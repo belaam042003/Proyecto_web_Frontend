@@ -1,59 +1,52 @@
-<form id="msform">
+<form id="msform" action="" [formGroup]="formularioHojaVida" method="post" enctype="multipart/form-data">
     <div [ngSwitch]="currentStep">
         <div *ngSwitchCase="'step1'">
             <fieldset>
-                <form (ngSubmit)="nextStep()">
                     <h1>Datos personales</h1>
                     <h2 class="fs-subtitle">Nombre:</h2>
-                    <input type="text" name="Nombre" placeholder="ej. Laura"/>
+                    <input type="text" name="Nombre" placeholder="ej. Laura" formControlName="nombre"/>
                     <h2 class="fs-subtitle">Apellidos:</h2>
-                    <input type="text" name="Apellidos" placeholder="ej. Garcia"/>
+                    <input type="text" name="Apellidos" placeholder="ej. Garcia" formControlName="apellido"/>
                     <h2 class="fs-subtitle">Cédula:</h2>
-                    <input type="text" name="Cédula" placeholder="ej. 1031642828"/>
+                    <input type="text" name="Cedula" placeholder="ej. 1031642828" formControlName="cedula"/>
+                    <h2 class="fs-subtitle">Dirección:</h2>
+                    <input type="text" name="Dirección" placeholder="ej. kra 178 #3G -42" formControlName="direccion"/>
+                    <h2 class="fs-subtitle">Correo electrónico:</h2>
+                    <input type="text" name="Correo" placeholder="ej. ejemplo@usa.edu.co" formControlName="correo"/>
                     <h2 class="fs-subtitle">Fecha de nacimiento:</h2>
-                    <input type="date" id="birthdate" name="birthdate" placeholder="Fecha de nacimiento" [(ngModel)]="formData.birthdate" required>
-                    <button type="submit" class="next action-button" value="Next">Next</button>
-                </form>
+                    <input type="date" id="birthdate" name="birthdate" placeholder="Fecha de nacimiento" [(ngModel)]="formData.birthdate" required formControlName="fechaNacimiento">
+                    <h2 class="fs-subtitle">Titulo profesional:</h2>
+                    <input type="text" id="titulo" name="titulo" placeholder="ej. Ingeniera Software" formControlName="titulo">
+                    
+                    <button type="submit" class="next action-button" value="Next" (click)="nextStep()">Next</button>
             </fieldset>
         </div>
         <div *ngSwitchCase="'step2'">
             <fieldset>
-                <form (ngSubmit)="nextStep()">
-                    <h1>Datos académicos</h1>
-                    <h2 class="fs-subtitle">Nivel de educación:</h2>
-                    <select type="text" name="Nivel de educación" placeholder="Nivel de educación">
-                        <option value="Primaria">Primaria</option>
-                        <option value="Secundaria">Secundaria</option>
-                        <option value="Técnico o tecnólogo">Técnico o tecnólogo</option>
-                        <option value="Bachiller">Bachiller</option>
-                        <option value="Pregrado">Pregrado</option>
-                        <option value="Postgrado">Postgrado</option>
-                        <option value="Doctorado o magister">Doctorado o magister</option>
-                      </select>
-                      <h2 class="fs-subtitle">Carrera:</h2>
-                    <input type="text" name="Carrera" placeholder="ej. Ciencias de la computación" />
-                    <h2 class="fs-subtitle">Universidad:</h2>
-                    <input type="text" name="Universidad" placeholder="ej. Sergio Arboleda" />
+                    <h1>Redes sociales</h1>
+                    <h2 class="fs-subtitle">Twitter:</h2>
+                    <input type="text" name="Twitter" placeholder="Usuario Twitter" formControlName="twitter"/>
+                    <h2 class="fs-subtitle">Pinterest:</h2>
+                    <input type="text" name="Pinterest" placeholder="Usuario Pinterest" formControlName="pinterest"/>
+                    <h2 class="fs-subtitle">LinkedIn:</h2>
+                    <input type="text" name="LinkedIn" placeholder="Usuario LinkedIn" formControlName="linkedIn"/>
                     <button type="submit" name="previous" class="previous action-button" value="Previous"
                         (click)="prevStep()">Previous</button>
-                    <button type="submit" class="next action-button" value="Next">Next</button>
-                </form>
+                    <button type="submit" class="next action-button" value="Next" (click)="nextStep()">Next</button>
             </fieldset>
         </div>
         <div *ngSwitchCase="'step3'">
             <fieldset>
-                <form (ngSubmit)="submitForm()">
-                    <h1>Datos laborales</h1>
-                    <h2 class="fs-subtitle">Empresa:</h2>
-                    <input type="text" name="Empresa" placeholder="ej. Tech and code SAS" />
-                    <h2 class="fs-subtitle">Cargo:</h2>
-                    <input type="text" name="Cargo" placeholder="ej. Técnico en computadores" />
-                    <h2 class="fs-subtitle">Duración:</h2>
-                    <input type="text" name="Duración" placeholder="ej. 3 meses a 6 meses" />
+                <h1>Cuentanos un poco sobre ti</h1>
+                    <h2 class="fs-subtitle">Describe tus Hobbies:</h2>
+                    <textarea id="descripcion" name="descripcion" rows="4" formControlName="descripcion" formControlName="hobbies"></textarea>
+                    <h2 class="fs-subtitle">Describe tu trayectoria en el área profesional:</h2>
+                    <textarea id="descripcion" name="descripcion" rows="4" formControlName="descripcion" formControlName="trayectoria"></textarea>
+                    <h2 class="fs-subtitle">¿Algo más que quieras añadir?:</h2>
+                    <textarea id="descripcion" name="descripcion" rows="4" formControlName="descripcion" formControlName="algoMas"></textarea>
                     <button type="submit" name="previous" class="previous action-button" value="Previous"
                         (click)="prevStep()">Previous</button>
-                    <a href="https://twitter.com/GoktepeAtakan" class="submit action-button">Submit</a>
-                </form>
+                    <button type="submit" id="submit" class="submit action-button" title="bt" (click)="crearHojaVida()">Submit</button>
             </fieldset>
         </div>
     </div>

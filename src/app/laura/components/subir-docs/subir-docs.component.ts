@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validator, FormControl, Validators} from '@angular/forms';
 import { Recurso } from '../../models/Recurso';
 import { ResourceService } from '../../services/resource.service';
-import { ListaPruebaComponent } from '../lista-prueba/lista-prueba.component';
 
 @Component({
   selector: 'app-subir-docs',
