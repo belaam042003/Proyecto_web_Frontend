@@ -1,100 +1,84 @@
-<form id="msform">
-    <div [ngSwitch]="currentStep">
-        <div *ngSwitchCase="'step1'">
-            <fieldset>
-                <form (ngSubmit)="nextStep()">
-                    <h1>Datos personales</h1>
-                    <h2 class="fs-subtitle">Nombre:</h2>
-                    <input type="text" name="Nombre" placeholder="ej. Laura"/>
-                    <h2 class="fs-subtitle">Apellidos:</h2>
-                    <input type="text" name="Apellidos" placeholder="ej. Garcia"/>
-                    <h2 class="fs-subtitle">Cédula:</h2>
-                    <input type="text" name="Cédula" placeholder="ej. 1031642828"/>
-                    <h2 class="fs-subtitle">Dirección:</h2>
-                    <input type="text" name="Dirección" placeholder="ej. kra 178 #3G -42"/>
-                    <h2 class="fs-subtitle">Correo electrónico:</h2>
-                    <input type="text" name="Correo" placeholder="ej. ejemplo@usa.edu.co"/>
-                    <h2 class="fs-subtitle">Fecha de nacimiento:</h2>
-                    <input type="date" id="birthdate" name="birthdate" placeholder="Fecha de nacimiento" [(ngModel)]="formData.birthdate" required>
-                    <button type="submit" class="next action-button" value="Next">Next</button>
-                </form>
-            </fieldset>
-        </div>
-        <div *ngSwitchCase="'step2'">
-            <fieldset>
-                <form (ngSubmit)="nextStep()">
-                    <h1>Redes sociales</h1>
-                    <h2 class="fs-subtitle">Twitter:</h2>
-                    <input type="text" name="Twitter" placeholder="Usuario Twitter"/>
-                    <h2 class="fs-subtitle">Pinterest:</h2>
-                    <input type="text" name="Pinterest" placeholder="Usuario Pinterest"/>
-                    <h2 class="fs-subtitle">LinkedIn:</h2>
-                    <input type="text" name="LinkedIn" placeholder="Usuario LinkedIn"/>
-                    <button type="submit" name="previous" class="previous action-button" value="Previous"
-                        (click)="prevStep()">Previous</button>
-                    <button type="submit" class="next action-button" value="Next">Next</button>
-                </form>
-            </fieldset>
-        </div>
-        <div *ngSwitchCase="'step3'">
-            <fieldset>
-                <form (ngSubmit)="nextStep()">
-                    <h1>Datos académicos</h1>
-                    <h2 class="fs-subtitle">Nivel de educación:</h2>
-                    <select type="text" name="Nivel de educación" placeholder="Nivel de educación">
-                        <option value="Primaria">Primaria</option>
-                        <option value="Secundaria">Secundaria</option>
-                        <option value="Técnico o tecnólogo">Técnico o tecnólogo</option>
-                        <option value="Bachiller">Bachiller</option>
-                        <option value="Pregrado">Pregrado</option>
-                        <option value="Postgrado">Postgrado</option>
-                        <option value="Doctorado o magister">Doctorado o magister</option>
-                      </select>
-                      <h2 class="fs-subtitle">Carrera:</h2>
-                    <input type="text" name="Carrera" placeholder="ej. Ciencias de la computación" />
-                    <h2 class="fs-subtitle">Universidad:</h2>
-                    <input type="text" name="Universidad" placeholder="ej. Sergio Arboleda" />
-                    <h2 class="fs-subtitle">Idiomas:</h2>
-                    <input type="text" name="Idiomas" placeholder="ej. Ingles(B1), mandarin(A2)" />
-                    <button type="submit" name="previous" class="previous action-button" value="Previous"
-                        (click)="prevStep()">Previous</button>
-                    <button type="submit" class="next action-button" value="Next">Next</button>
-                </form>
-            </fieldset>
-        </div>
-        <div *ngSwitchCase="'step4'">
-            <fieldset>
-                <form (ngSubmit)="nextStep()">
+<button type="submit" class="boton-agregar" data-toggle="modal" data-target="#largeModal2">Agregar experiencia</button>
+
+<!-- large modal -->
+<div class="modal fade" id="largeModal2" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="msform" action="" [formGroup]="formularioExperiencias" method="post"
+                enctype="multipart/form-data">
+                <fieldset>
                     <h1>Experiencia</h1>
+                    <h2 class="fs-subtitle">Pon un titulo:</h2>
+                    <input type="text" name="titulo" placeholder="ej. experiencia en ethical hacking"
+                        formControlName="titulo" />
                     <h2 class="fs-subtitle">Empresa:</h2>
-                    <input type="text" name="Empresa" placeholder="ej. Tech and code SAS" />
+                    <input type="text" name="Empresa" placeholder="ej. Tech and code SAS" formControlName="empresa" />
                     <h2 class="fs-subtitle">Cargo:</h2>
-                    <input type="text" name="Cargo" placeholder="ej. Técnico en computadores" />
+                    <input type="text" name="Cargo" placeholder="ej. Técnico en computadores" formControlName="cargo" />
                     <h2 class="fs-subtitle">Duración:</h2>
-                    <input type="text" name="Duración" placeholder="ej. 3 meses a 6 meses" />
-                    <button type="submit" name="previous" class="previous action-button" value="Previous"
-                        (click)="prevStep()">Previous</button>
-                    <button type="submit" class="next action-button" value="Next">Next</button>
-                </form>
-            </fieldset>
+                    <input type="text" name="Duración" placeholder="ej. 3 meses a 6 meses" formControlName="duracion" />
+                    <button type="submit" class="next action-button" value="Crear"
+                        (click)="crearExperiencias()">Crear</button>
+                </fieldset>
+            </form>
         </div>
-
-        <div *ngSwitchCase="'step5'">
-            <fieldset>
-                <form (ngSubmit)="submitForm()">
-                    <h1>Cuentanos un poco sobre ti</h1>
-                    <h2 class="fs-subtitle">Describe tus Hobbies:</h2>
-                    <textarea id="descripcion" name="descripcion" rows="4" formControlName="descripcion"></textarea>
-                    <h2 class="fs-subtitle">Describe tu trayectoria en el área profesional:</h2>
-                    <textarea id="descripcion" name="descripcion" rows="4" formControlName="descripcion"></textarea>
-                    <h2 class="fs-subtitle">¿Algo más que quieras añadir?:</h2>
-                    <textarea id="descripcion" name="descripcion" rows="4" formControlName="descripcion"></textarea>
-                    <button type="submit" name="previous" class="previous action-button" value="Previous"
-                        (click)="prevStep()">Previous</button>
-                    <a href="https://twitter.com/GoktepeAtakan" class="submit action-button">Submit</a>
-                </form>
-            </fieldset>
-        </div>
-
     </div>
-</form>
+</div>
+
+
+<div *ngFor="let experiencias of experienciass" class ="letra">
+    <h3 class="titulo">{{ experiencias.titulo}}</h3>
+    <p class="justified">Empresa: {{ experiencias.empresa}} </p>
+    <p class="justified">Cargo: {{ experiencias.cargo}}
+        <button type="" class="btn_reaccion2"> Opciones
+            <div class="reacciones">
+                <div class="reaccion" type="submit" data-toggle="modal" data-target="#largeModal3"
+                    (click)="activador( experiencias)">
+                    <i>Edit</i>
+                    <span>Editar</span>
+                </div>
+                <div class="reaccion" id="mostrar" type="submit" (click)="eliminarExperiencias( experiencias.titulo)">
+                    <i>Delete</i>
+                    <span>Eliminar</span>
+                </div>
+            </div>
+        </button>
+    </p>
+    <p class="justified">Duración: {{ experiencias.duracion}}</p>
+
+</div>
+
+<!-- large modal -->
+<div class="modal fade" id="largeModal3" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="msform" action="" [formGroup]="formularioExperiencias" method="post"
+                enctype="multipart/form-data">
+                <fieldset>
+                    <h1>Experiencia</h1>
+                    <h2 class="fs-subtitle">Pon un titulo:</h2>
+                    <input type="text" name="titulo" placeholder="ej. experiencia en ethical hacking"
+                        formControlName="titulo" />
+                    <h2 class="fs-subtitle">Empresa:</h2>
+                    <input type="text" name="Empresa" placeholder="ej. Tech and code SAS" formControlName="empresa" />
+                    <h2 class="fs-subtitle">Cargo:</h2>
+                    <input type="text" name="Cargo" placeholder="ej. Técnico en computadores" formControlName="cargo" />
+                    <h2 class="fs-subtitle">Duración:</h2>
+                    <input type="text" name="Duración" placeholder="ej. 3 meses a 6 meses" formControlName="duracion" />
+                    <button type="submit" class="next action-button" value="Crear"
+                        (click)="actualizarExperiencias()">Actualizar</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

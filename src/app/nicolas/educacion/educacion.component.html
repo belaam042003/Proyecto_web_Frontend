@@ -1,4 +1,4 @@
-<button type="submit" class="boton-agregar"  data-toggle="modal" data-target="#largeModal">Agregar</button>
+<button type="submit" class="boton-agregar" data-toggle="modal" data-target="#largeModal">Agregar educación</button>
 
 <!-- large modal -->
 <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
@@ -10,28 +10,96 @@
                 </button>
             </div>
             <form id="msform" action="" [formGroup]="formularioEstudios" method="post" enctype="multipart/form-data">
-                    <fieldset>
-                        <form>
-                            <h1>Datos académicos</h1>
-                            <h2 class="fs-subtitle">Nivel de educación:</h2>
-                            <select type="text" name="Nivel de educación" placeholder="Nivel de educación" formControlName="nivelEducacion">
-                                <option value="Primaria">Primaria</option>
-                                <option value="Secundaria">Secundaria</option>
-                                <option value="Técnico o tecnólogo">Técnico o tecnólogo</option>
-                                <option value="Bachiller">Bachiller</option>
-                                <option value="Pregrado">Pregrado</option>
-                                <option value="Postgrado">Postgrado</option>
-                                <option value="Doctorado o magister">Doctorado o magister</option>
-                            </select>
-                            <h2 class="fs-subtitle">Carrera:</h2>
-                            <input type="text" name="Carrera" placeholder="ej. Ciencias de la computación" formControlName="carrera"/>
-                            <h2 class="fs-subtitle">Universidad:</h2>
-                            <input type="text" name="Universidad" placeholder="ej. Sergio Arboleda" formControlName="universidad" />
-                            <h2 class="fs-subtitle">Idiomas:</h2>
-                            <input type="text" name="Idiomas" placeholder="ej. Ingles(B1), mandarin(A2)" formControlName="idiomas"/>
-                            <button type="submit" class="next action-button" value="Crear" (click)="crearEstudios()" >Crear</button>
-                        </form>
-                    </fieldset>
+                <fieldset>
+                    <h1>Datos académicos</h1>
+                    <h2 class="fs-subtitle">Nivel de educación:</h2>
+                    <select type="text" name="Nivel de educación" placeholder="Nivel de educación"
+                        formControlName="nivelEducacion">
+                        <option value="Primaria">Primaria</option>
+                        <option value="Secundaria">Secundaria</option>
+                        <option value="Técnico o tecnólogo">Técnico o tecnólogo</option>
+                        <option value="Bachiller">Bachiller</option>
+                        <option value="Pregrado">Pregrado</option>
+                        <option value="Postgrado">Postgrado</option>
+                        <option value="Doctorado o magister">Doctorado o magister</option>
+                    </select>
+                    <h2 class="fs-subtitle">Carrera:</h2>
+                    <input type="text" name="Carrera" placeholder="ej. Ciencias de la computación"
+                        formControlName="carrera" />
+                    <h2 class="fs-subtitle">Universidad:</h2>
+                    <input type="text" name="Universidad" placeholder="ej. Sergio Arboleda"
+                        formControlName="universidad" />
+                    <h2 class="fs-subtitle">Idiomas:</h2>
+                    <input type="text" name="Idiomas" placeholder="ej. Ingles(B1), mandarin(A2)"
+                        formControlName="idiomas" />
+                    <button type="submit" class="next action-button" value="Crear"
+                        (click)="crearEstudios()">Crear</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div *ngFor="let estudios of estudioss" class="rela-block page">
+    <div class="image-container">
+        
+        <p class="nivel">{{estudios.nivelEducacion}}
+            <button id="menu-button" type="" class="btn_reaccion">&#8942;
+                <div class="reacciones">
+                  <div class="reaccion"  type="submit" data-toggle="modal" data-target="#largeModal1" (click)="activador(estudios)">
+                    <i>Edit</i>
+                    <span>Editar</span>
+                  </div>
+                  <div class="reaccion" id="mostrar" type="submit" (click)="eliminarEstudios(estudios.nivelEducacion)">
+                    <i>Delete</i>
+                    <span>Eliminar</span>
+                  </div>
+                </div>
+              </button>
+        </p>
+        <p class="carrera">Carrera: {{estudios.carrera}}</p>
+        <p class="universidad">Universidad: {{estudios.universidad}}</p>
+        <p class="idiomas">Idiomas: {{estudios.idiomas}}</p>
+        
+    </div>
+</div>
+
+<!-- large modal -->
+<div class="modal fade" id="largeModal1" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="msform" action="" [formGroup]="formularioEstudios" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <h1>Datos académicos</h1>
+                    <h2 class="fs-subtitle">Nivel de educación:</h2>
+                    <select type="text" name="Nivel de educación" placeholder="Nivel de educación"
+                        formControlName="nivelEducacion">
+                        <option value="Primaria">Primaria</option>
+                        <option value="Secundaria">Secundaria</option>
+                        <option value="Técnico o tecnólogo">Técnico o tecnólogo</option>
+                        <option value="Bachiller">Bachiller</option>
+                        <option value="Pregrado">Pregrado</option>
+                        <option value="Postgrado">Postgrado</option>
+                        <option value="Doctorado o magister">Doctorado o magister</option>
+                    </select>
+                    <h2 class="fs-subtitle">Carrera:</h2>
+                    <input type="text" name="Carrera" placeholder="ej. Ciencias de la computación"
+                        formControlName="carrera" />
+                    <h2 class="fs-subtitle">Universidad:</h2>
+                    <input type="text" name="Universidad" placeholder="ej. Sergio Arboleda"
+                        formControlName="universidad" />
+                    <h2 class="fs-subtitle">Idiomas:</h2>
+                    <input type="text" name="Idiomas" placeholder="ej. Ingles(B1), mandarin(A2)"
+                        formControlName="idiomas" />
+                    <button type="submit" class="next action-button" value="Crear"
+                        (click)="actualizarEstudios()">Actualizar datos</button>
+                </fieldset>
             </form>
         </div>
     </div>

@@ -32,7 +32,7 @@ export class EducacionComponent implements OnInit{
   }
 
   //Eliminar estudios
-  eliminarEstudios(idEstudios: number){
+  eliminarEstudios(idEstudios: String){
     this.rService.eliminarEstudios(idEstudios).subscribe(res =>{
       this.getEstudioss()
     })

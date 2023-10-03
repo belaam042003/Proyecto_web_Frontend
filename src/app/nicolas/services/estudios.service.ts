@@ -13,7 +13,6 @@ export class EstudiosService {
   
       // Crear estudios:
       crearEstudios(estudios: Estudios){
-        console.log(estudios)
         return this.http.post<Estudios>(this.rutaGloblal + 'nuevoEstudios', estudios, {
           observe: 'response'
         })
@@ -32,9 +31,9 @@ export class EstudiosService {
       }
   
       //  Eliminar estudios:
-      eliminarEstudios(id: number){
-        
-          return this.http.post<Boolean>(this.rutaGloblal +id , {
+      eliminarEstudios(id: String){
+          console.log(id)
+          return this.http.post<Boolean>(this.rutaGloblal+ 'borrarEstudios/' +id , {
           observe: 'response'
         })
       }
